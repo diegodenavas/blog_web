@@ -1,0 +1,22 @@
+/*Esta plantlla css da estilo a los formularios para crear nuevos post, 
+por lo que debe ser incluida en nuevo_post*/
+
+label{
+    display: block;
+}
+
+input[type="text"]{
+    width: 97%;
+    height: 1.5em;
+}
+
+textarea{
+    width: 97%;
+    height: 25em;
+}
+
+input[type="submit"]{
+    margin-top: 3%;
+    width: 10%;
+    height: 2em;
+}

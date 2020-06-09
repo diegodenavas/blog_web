@@ -1,0 +1,53 @@
+
+/*Esta hoja de estilos carga los estilos que son comunes 
+a todas las páginas de artículos(javascript, php, mysql y java 
+actualmente) y a todos los post.
+
+Carga los estilos del título de la página y la apariencia de la 
+parte central de la página, pero solo los contenedores 
+principales(section y aside) aunque no lo que hay dentro de ellos, 
+el interior lo cargan otras hojas de estilo
+
+Se la cargaremos a todas las páginas de seccion y a los post*/
+
+
+#tituloPagina{
+    margin: 3% 0% 2% 5%;
+    color: rgb(41, 19, 107);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 2.5em;
+}
+
+section, aside{
+    margin-top: 2%;
+    display: inline-block;
+}
+
+section{
+    margin: 2% 5%;
+    padding: 4% 4%;
+    width: 55%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-top: rgba(211, 211, 211, 0.5) 1px solid;
+}
+
+aside{
+    background-color: rgba(255, 255, 255, 0.5);;
+    width: 19%;
+    padding: 4% 0% 4% 2%;
+    border-top: rgba(211, 211, 211, 0.5) 1px solid;
+    vertical-align: top;
+    position: fixed;
+}
+
+aside>h4{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 3%;
+}
+
+aside>p{
+    margin-bottom: 2%;
+}

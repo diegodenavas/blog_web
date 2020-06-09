@@ -1,0 +1,45 @@
+
+/*Hoja de estilos comun en todas las paginas que nos mostrará
+el navegador igual en todas las paginas*/
+
+/*Aqui empezamos nuestra hoja de estilos*/
+
+html{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(238, 238, 238);
+}
+
+
+nav{
+    padding: 1% 5%;
+    background: linear-gradient(90deg, rgb(41, 19, 107) 23%, rgba(72,27,154,1) 80%, rgba(89,30,215,1) 100%);
+    box-shadow: rgba(89,30,215,0.6) 0px 2px 3px;
+    font-family: sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+}
+
+.divisionesMenu{
+    display: inline-block;
+    width: 48%;
+}
+
+.elementosMenu{
+    display: inline-block;
+    margin-right:7%;
+    transition: ease-in-out 0.5s;
+}
+
+.elementosMenu:hover{
+    font-size: 1.2em;
+}
+
+#logoMenu{
+    text-align: right;
+}
+
+menu a{
+    color: white;
+    text-decoration: none;
+}
