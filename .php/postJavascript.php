@@ -19,8 +19,7 @@
                     <img src='imagenes/creandoContenido.jpg' alt=''>
                     <h2>" . $tablaAsociativa[$row][1] . "</h2>
                     <p>" . recortarTextoPrincipal($tablaAsociativa[$row][2]) . "</p>
-                </article>
-                <hr>";
+                </article>";
             }
             else{
                 echo 
@@ -32,15 +31,14 @@
                 </article>";
                 $row--;
                 
-                if ($row > 0) {
+                if ($row >= 0) {
                     echo
                     "<article>
                         <img src='imagenes/codigo.jpg' alt=''>
                         <h2>". $tablaAsociativa[$row][1] ."</h2>
                         <p>". recortarTexto($tablaAsociativa[$row][2]) ."</p>
                     </article>
-                    </div>
-                    <hr>";
+                    </div>";
                 }
                 else {
                     echo 
@@ -105,7 +103,7 @@
                 $textoModif_post .= substr($texto, $i, 1);
 
             }
-            return $textoModif_post . "<br><br> <a href=''>Leer más...</a>";
+            return $textoModif_post . "...<br><br> <a href=''>Leer más...</a>";
         }
         else{
             return $texto;
@@ -125,7 +123,7 @@
                 $textoModif_post .= substr($texto, $i, 1);
 
             }
-            return $textoModif_post . "<br><br> <a href=''>Leer más...</a>";
+            return $textoModif_post . "...<br><br> <a href=''>Leer más...</a>";
         }
         else{
             return $texto;

@@ -7,12 +7,13 @@ Es decir, carga la apariencia de los artículos y del interior del aside*/
 section>div{
     text-align: center;
     position: relative;
+    border-top: rgb(206, 206, 206) 1px solid;
 }
 
 div>article{
     display: inline-block;
     text-align: left;
-    width: 30%;
+    width: 32%;
     margin: 7% 8%;
     background-color: rgba(224, 224, 224, 0.5);
     box-shadow: rgba(41, 41, 41, 0.5) 2px 2px 3px 2px;
