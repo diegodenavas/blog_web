@@ -34,7 +34,13 @@
     <div>
         <section>
             <?php
-                require(".php/postJavascript.php");
+                //require(".php/postJavascript.php");
+
+                require(".php/sectionsController.php");
+
+                $controlador = new SectionsController();
+
+                $controlador->muestraPost("SELECT * FROM post");
             ?>
         </section>
         
