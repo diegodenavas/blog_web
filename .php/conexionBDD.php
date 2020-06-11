@@ -17,7 +17,7 @@
 
             try {
                 
-                parent::__construct($this->host.';dbname='.$this->nombre_bdd, $this->user, $this->pass);
+                parent::__construct($this->host.';port=3308; dbname='.$this->nombre_bdd, $this->user, $this->pass);
 
             } catch (PDOException $e) {
 
@@ -32,7 +32,7 @@
 
         public function ejecutarConsulta($consulta){
 
-            $statement = $this->prepare("SELECT * FROM post");
+            $statement = $this->prepare($consulta);
 
             return $statement;
         }

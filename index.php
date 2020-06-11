@@ -20,6 +20,10 @@
     <script src=".js/general.js"></script>
     <script src=".js/index.js"></script>
 
+    <?php
+        session_start();
+    ?>
+
 </head>
 
 <body>
@@ -30,6 +34,10 @@
                 <li class="elementosMenu"><a href="">PHP</a></li>
                 <li class="elementosMenu"><a href="">MySQL</a></li>
                 <li class="elementosMenu"><a href="">Java</a></li>
+                <?php
+                    if(!isset($_SESSION["nick_usuario"])) echo "<li class='elementosMenu'><a href='login.php'>Login</a></li>";
+                    else echo "Bienvenido " . $_SESSION["nick_usuario"];
+                ?>
             </ul>
             <p class="divisionesMenu" id="logoMenu"><a href="index.php">aprendiendoaprogramar.com</a></p>
         </menu>
