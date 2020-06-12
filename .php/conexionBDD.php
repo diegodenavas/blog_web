@@ -36,20 +36,7 @@
 
             return $statement;
         }
-
         
-        public function ejecutarSentencia($sentencia){
-
-            $statement = $this->conexion->prepare($sentencia);
-
-            if($statement->execute(array())){
-                echo "sentencia ejecutada";
-            }
-            else{
-                exit("No se ha podido ejecutar la consulta");
-            }
-        }
-
         
         
         //Getters and Setters

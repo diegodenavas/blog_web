@@ -3,11 +3,13 @@ por lo que debe ser incluida en nuevo_post*/
 
 label{
     display: block;
+    margin-bottom: 1%;
 }
 
 input[type="text"]{
     width: 97%;
     height: 1.5em;
+    margin-bottom: 2%;
 }
 
 textarea{
@@ -19,4 +21,10 @@ input[type="submit"]{
     margin-top: 3%;
     width: 10%;
     height: 2em;
+}
+
+select{
+    width: 15%;
+    height: 2em;
+    margin-top: 2%;
 }

@@ -1,4 +1,5 @@
 <?php
+
         include("conexionBDD.php");
 
     class Usuario{
@@ -6,7 +7,7 @@
         private $nick;
         private $pass;
         
-        function __construct(String $nick, String $pass){
+        public function __construct(String $nick, String $pass){
             $this->nick = $nick;
             $this->pass = $pass;
         }

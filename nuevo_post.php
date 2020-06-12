@@ -11,6 +11,14 @@
     <link rel="stylesheet" href=".css/estilosPaginasGeneral.css">
     <link rel="stylesheet" href=".css/nuevoPost.css">
 
+    <?php
+        session_start();
+
+        if($_SESSION["nick_usuario"] != "admin"){
+            header("Location: /aprendiendoaprogramar.com");
+        }
+    ?>
+
 </head>
 <body>
     <nav>
@@ -28,11 +36,18 @@
     <h1 id="tituloPagina">aprendiendoaprogramar > nuevo post</h1>
 
     <section>
-        <form action="crearPost.php" method="POST">
+        <form action=".php/nuevoPostController.php" method="POST">
             <label for="titulo">Título</label>
             <input type="text" name="titulo">
             <label for="contenido">Contenido</label>
             <textarea name="contenido"></textarea>
+            <select name="seccion">
+                <option>Javascript</option>
+                <option>MySQL</option>
+                <option>PHP</option>
+                <option>Java</option>
+            </select>
+            <br>
             <input type="submit" value="Enviar">
         </form>
     </section>
