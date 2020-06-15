@@ -11,6 +11,7 @@
     <link rel="stylesheet" href=".css/login.css">
 
     <?php
+        include(".php/models/Usuario.php");
         session_start();
 
         if (isset($_SESSION["nick_usuario"])) header("Location: /aprendiendoaprogramar.com");
@@ -19,21 +20,12 @@
 </head>
 
 <body>
-    <nav>
-        <menu>
-            <ul class="divisionesMenu">
-                <li class="elementosMenu"><a href="javascript.php">JavaScript</a></li>
-                <li class="elementosMenu"><a href="">PHP</a></li>
-                <li class="elementosMenu"><a href="">MySQL</a></li>
-                <li class="elementosMenu"><a href="">Java</a></li>
-                <li class="elementosMenu"><a href="login.php">Login</a></li>
-            </ul>
-            <p class="divisionesMenu" id="logoMenu"><a href="index.php">aprendiendoaprogramar.com</a></p>
-        </menu>
-    </nav>
+    <?php
+        require(".php/scripts/elementosComunes/nav.php");
+    ?>
 
     <div id="contenedorLogin">
-        <form action=".php/loginController.php" method="POST">
+        <form action="/aprendiendoaprogramar.com/.php/controllers/loginController.php" method="POST">
             <div id="contenedorTextos">
                 <label for="Usuario">Usuario</label>
                 <input type="text" name="nick">

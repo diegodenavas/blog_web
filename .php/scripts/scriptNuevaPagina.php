@@ -9,9 +9,9 @@ $miScript =
     <title>Document</title>
 
     <!--Cargamos nuestras hojas de estilo-->
-    <link rel='stylesheet' href='.css/plantillaReset.css'>
-    <link rel='stylesheet' href='.css/general.css'>
-    <link rel='stylesheet' href='.css/estilosPaginasGeneral.css'>
+    <link rel='stylesheet' href='../.css/plantillaReset.css'>
+    <link rel='stylesheet' href='../.css/general.css'>
+    <link rel='stylesheet' href='../.css/estilosPaginasGeneral.css'>
 
     <!--Cargamos jquery y nuestros scripts-->
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
@@ -22,24 +22,12 @@ $miScript =
 </head>
 
 <body>
-    <nav>
-        <menu>
-            <ul class='divisionesMenu'>
-                <li class='elementosMenu'><a href='javascript.php'>JavaScript</a></li>
-                <li class='elementosMenu'><a href=''>PHP</a></li>
-                <li class='elementosMenu'><a href=''>MySQL</a></li>
-                <li class='elementosMenu'><a href=''>Java</a></li>
-                <?php
-                    if(!isset($" . "_SESSION['nick_usuario'])) printf('<li class=elementosMenu><a href=login.php>Login</a></li>');
-                    else echo 'Bienvenido ' . $" . "_SESSION['nick_usuario'];
-                ?>
-            </ul>
-            <p class='divisionesMenu' id='logoMenu'><a href='index.php'>aprendiendoaprogramar.com</a></p>
-        </menu>
-    </nav>
+    <?php
+    require('../.php/scripts/elementosComunes/nav.php');
+    ?>
 
     <?php
-        require('.php/conexionBDD.php');
+        require('../.php/models/conexionBDD.php');
 
         $"."conex = new ConexionBDD();
 
@@ -64,5 +52,6 @@ $miScript =
         <p>Terminando el index</p>
         <p>Creando contenido</p>
     </aside>
+</body>
 </html>"
 ?>

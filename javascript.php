@@ -21,21 +21,9 @@
 </head>
 
 <body>
-    <nav>
-        <menu>
-            <ul class="divisionesMenu">
-                <li class="elementosMenu"><a href="javascript.php">JavaScript</a></li>
-                <li class="elementosMenu"><a href="">PHP</a></li>
-                <li class="elementosMenu"><a href="">MySQL</a></li>
-                <li class="elementosMenu"><a href="">Java</a></li>
-                <?php
-                    if(!isset($_SESSION["nick_usuario"])) echo "<li class='elementosMenu'><a href='login.php'>Login</a></li>";
-                    else echo "Bienvenido " . $_SESSION["nick_usuario"];
-                ?>
-            </ul>
-            <p class="divisionesMenu" id="logoMenu"><a href="index.php">aprendiendoaprogramar.com</a></p>
-        </menu>
-    </nav>
+    <?php
+        require(".php/scripts/elementosComunes/nav.php");
+    ?>
 
     <h1 id="tituloPagina">aprendiendoaprogramar > javascript</h1>
 
@@ -43,11 +31,18 @@
         <section>
 
             <?php
-                require(".php/sectionsController.php");
+                require(".php/controllers/sectionsController.php");
 
                 $controlador = new SectionsController();
 
-                $controlador->muestraPost("SELECT * FROM post");
+                $controlador->muestraPost();
+
+                if(isset($_SESSION["nick_usuario"])){
+                    if($_SESSION["nick_usuario"] == "admin"){
+                        echo
+                        "<p id=pestañaNuevoPost><a href='nuevo_post.php'>Nuevo post</a></p>";
+                    }
+                }
             ?>
 
         </section>

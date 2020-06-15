@@ -1,19 +1,38 @@
 <?php
 
+
     class Post{
         
+        private $id;
         private $titulo;
         private $contenido;
         private $seccion;
+        private $usuario;
 
-        public function __construct(String $titulo, String $contenido, $seccion){
+        public function __construct(int $id, String $titulo, String $contenido, $seccion, String $usuario){
+            $this->id=$id;
             $this->titulo=$titulo;
             $this->contenido=$contenido;
             $this->seccion=$seccion;
+            $this->usuario=$usuario;
         }
 
 
+
+
         //Getters & Setters
+        
+        public function getId()
+        {
+                return $this->id;
+        }
+
+        public function setId($id)
+        {
+                $this->id = $id;
+
+                return $this;
+        }
 
         public function getTitulo(){
             return $this->titulo;
@@ -40,5 +59,19 @@
         public function setSeccion(String $seccion){
             $this->seccion=$seccion;
         }
+
+
+        public function getUsuario()
+        {
+                return $this->usuario;
+        }
+
+        public function setUsuario($usuario)
+        {
+                $this->usuario = $usuario;
+
+                return $this;
+        }
+
     }
 ?>

@@ -21,27 +21,16 @@
     <script src=".js/index.js"></script>
 
     <?php
+        include(".php/models/usuario.php");
         session_start();
     ?>
 
 </head>
 
 <body>
-    <nav>
-        <menu>
-            <ul class="divisionesMenu">
-                <li class="elementosMenu"><a href="javascript.php">JavaScript</a></li>
-                <li class="elementosMenu"><a href="">PHP</a></li>
-                <li class="elementosMenu"><a href="">MySQL</a></li>
-                <li class="elementosMenu"><a href="">Java</a></li>
-                <?php
-                    if(!isset($_SESSION["nick_usuario"])) echo "<li class='elementosMenu'><a href='login.php'>Login</a></li>";
-                    else echo "Bienvenido " . $_SESSION["nick_usuario"];
-                ?>
-            </ul>
-            <p class="divisionesMenu" id="logoMenu"><a href="index.php">aprendiendoaprogramar.com</a></p>
-        </menu>
-    </nav>
+    <?php
+        require(".php/scripts/elementosComunes/nav.php");
+    ?>
 
     <header id="cabecera">
         <h1>Blog de aprendizaje a la programación</h1>

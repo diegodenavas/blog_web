@@ -21,22 +21,14 @@
 
 </head>
 <body>
-    <nav>
-        <menu>
-            <ul class="divisionesMenu">
-                <li class="elementosMenu"><a href="javascript.php">JavaScript</a></li>
-                <li class="elementosMenu"><a href="">PHP</a></li>
-                <li class="elementosMenu"><a href="">MySQL</a></li>
-                <li class="elementosMenu"><a href="">Java</a></li>
-            </ul>
-            <p class="divisionesMenu" id="logoMenu"><a href="index.php">aprendiendoaprogramar.com</a></p>
-        </menu>
-    </nav>
+    <?php
+        require(".php/scripts/elementosComunes/nav.php");
+    ?>
 
     <h1 id="tituloPagina">aprendiendoaprogramar > nuevo post</h1>
 
     <section>
-        <form action=".php/nuevoPostController.php" method="POST">
+        <form action=".php/controllers/nuevoPostController.php" method="POST">
             <label for="titulo">Título</label>
             <input type="text" name="titulo">
             <label for="contenido">Contenido</label>
