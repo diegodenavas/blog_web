@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>aprendiendoaprogramar.com</title>
 
     <!--Cargamos less
     <link rel="stylesheet/less" type="text/css" href="styles.less">
@@ -61,7 +61,7 @@
                 </p>
             </div>
 
-            <a href="javascript.php"><div>
+            <a href="view_section.php?section=JavaScript"><div>
                 <div>
                     <p>Ir al contenido</p>
                 </div>
@@ -84,7 +84,7 @@
                 </p>
             </div>
 
-            <a href=""><div>
+            <a href="view_section.php?section=PHP"><div>
                 <div>
                     <p>Ir al contenido</p>
                 </div>
@@ -107,7 +107,7 @@
                 </p>
             </div>
 
-            <a href=""><div>
+            <a href="view_section.php?section=MySQL"><div>
                 <div>
                     <p>Ir al contenido</p>
                 </div>
@@ -130,7 +130,7 @@
                 </p>
             </div>
 
-            <a href=""><div>
+            <a href="view_section.php?section=Java"><div>
                 <div>
                     <p>Ir al contenido</p>
                 </div>

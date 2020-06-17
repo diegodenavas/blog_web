@@ -28,11 +28,6 @@ nav{
 .elementosMenu{
     display: inline-block;
     margin-right:7%;
-    transition: ease-in-out 0.5s;
-}
-
-.elementosMenu:hover{
-    font-size: 1.2em;
 }
 
 #logoMenu{
@@ -42,4 +37,9 @@ nav{
 menu a{
     color: white;
     text-decoration: none;
+    transition: ease-in-out 0.3s;
+}
+
+menu a:hover{
+    color: rgb(224, 206, 37);
 }

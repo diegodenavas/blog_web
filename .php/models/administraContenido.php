@@ -6,15 +6,13 @@
 
     class AdministraContenido{
 
-        private $allPost;
-
 
         //Methods
 
-        public function getAllPosts(){
+        public function getPosts(String $consulta){
             $conex = new ConexionBDD();
 
-            $statement = $conex->ejecutarConsulta("SELECT * FROM POST");
+            $statement = $conex->ejecutarConsulta($consulta);
 
             $statement->execute(array());
 
@@ -22,18 +20,24 @@
 
             while ($fila = $statement->fetch(PDO::FETCH_BOTH)) {
 
-                $arrayPosts[$cont] = new Post($fila[0], $fila[1], $fila[2], $fila[3], $fila[4]);
+                $arrayPosts[$cont] = new Post($fila[1], nl2br($fila[2]), $fila[3], $fila[4]);
 
                 $cont++;
             }
 
-            return $arrayPosts;
-        }
-        
+            $conex = null;
 
-        public function borraPost($id){ //en $id tambien puede ir una subconsulta con paréntesis.
+            if(!isset($arrayPosts)){
+                return 0;
+            }
+            return $arrayPosts;
+
+        }
+
+
+        public function borraPost($titulo){
             $conex = new ConexionBDD();
-            $statement = $conex->ejecutarConsulta("DELETE FROM post WHERE id = ". $id);
+            $statement = $conex->ejecutarConsulta("DELETE FROM post WHERE titulo = '". $titulo ."'");
 
             $statement->execute();
         }

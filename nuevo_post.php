@@ -34,7 +34,7 @@
             <label for="contenido">Contenido</label>
             <textarea name="contenido"></textarea>
             <select name="seccion">
-                <option>Javascript</option>
+                <option>JavaScript</option>
                 <option>MySQL</option>
                 <option>PHP</option>
                 <option>Java</option>

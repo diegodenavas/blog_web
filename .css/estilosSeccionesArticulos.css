@@ -6,11 +6,10 @@ Es decir, carga la apariencia de los artículos y del interior del aside*/
 
 section>div{
     text-align: center;
-    position: relative;
     border-top: rgb(206, 206, 206) 1px solid;
 }
 
-div>article{
+article{
     display: inline-block;
     text-align: left;
     width: 32%;
@@ -21,7 +20,7 @@ div>article{
     
 }
 
-div>article:hover{
+article:hover{
     background-color: rgba(72,27,154,0.3);
 }
 
@@ -44,7 +43,6 @@ article>h2{
     text-align: left;
     width: 84%;
     margin: 0% 8% 7% 8%;
-    overflow: hidden;
     background-color: rgba(224, 224, 224, 0.5);
     box-shadow: rgba(41, 41, 41, 0.5) 2px 2px 3px 2px;
     transition: ease-in-out 0.5s 0s;
@@ -52,4 +50,8 @@ article>h2{
 
 #articuloPrincipal:hover{
     background-color: rgba(72,27,154,0.3);
+}
+
+.iconoPapelera{
+    width: 2.5%;
 }

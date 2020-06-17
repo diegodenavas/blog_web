@@ -1,10 +1,10 @@
 <nav>
     <menu>
         <ul class="divisionesMenu">
-            <li class="elementosMenu"><a href="/aprendiendoaprogramar.com/javascript.php">JavaScript</a></li>
-            <li class="elementosMenu"><a href="">PHP</a></li>
-            <li class="elementosMenu"><a href="">MySQL</a></li>
-            <li class="elementosMenu"><a href="">Java</a></li>
+            <li class="elementosMenu"><a href="/aprendiendoaprogramar.com/view_section.php?section=JavaScript">JavaScript</a></li>
+            <li class="elementosMenu"><a href="/aprendiendoaprogramar.com/view_section.php?section=PHP">PHP</a></li>
+            <li class="elementosMenu"><a href="/aprendiendoaprogramar.com/view_section.php?section=MySQL">MySQL</a></li>
+            <li class="elementosMenu"><a href="/aprendiendoaprogramar.com/view_section.php?section=Java">Java</a></li>
             <?php
                 if(!isset($_SESSION["nick_usuario"])) echo "<li class='elementosMenu'><a href='/aprendiendoaprogramar.com/login.php'>Login</a></li>";
                 else echo "<li class='elementosMenu'><a href='/aprendiendoaprogramar.com/.php/controllers/logoutController.php'>Logout " . $_SESSION['nick_usuario'] . "</a></li>";

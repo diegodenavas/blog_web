@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Javascript</title>
 
     <!--Cargamos nuestras hojas de estilo-->
     <link rel="stylesheet" href=".css/plantillaReset.css">
@@ -13,6 +13,7 @@
 
     <!--Cargamos jquery y nuestros scripts-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src=".js/iconos.js"></script>
 
     <?php
         session_start();
@@ -25,17 +26,17 @@
         require(".php/scripts/elementosComunes/nav.php");
     ?>
 
-    <h1 id="tituloPagina">aprendiendoaprogramar > javascript</h1>
+    <h1 id="tituloPagina">aprendiendoaprogramar > <?php echo $_GET["section"] ?></h1>
 
     <div>
         <section>
-
+            
             <?php
                 require(".php/controllers/sectionsController.php");
 
                 $controlador = new SectionsController();
 
-                $controlador->muestraPost();
+                $controlador->muestraPost($_GET["section"]);
 
                 if(isset($_SESSION["nick_usuario"])){
                     if($_SESSION["nick_usuario"] == "admin"){

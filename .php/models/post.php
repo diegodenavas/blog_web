@@ -3,14 +3,12 @@
 
     class Post{
         
-        private $id;
         private $titulo;
         private $contenido;
         private $seccion;
         private $usuario;
 
-        public function __construct(int $id, String $titulo, String $contenido, $seccion, String $usuario){
-            $this->id=$id;
+        public function __construct(String $titulo, String $contenido, $seccion, String $usuario){
             $this->titulo=$titulo;
             $this->contenido=$contenido;
             $this->seccion=$seccion;
@@ -21,18 +19,6 @@
 
 
         //Getters & Setters
-        
-        public function getId()
-        {
-                return $this->id;
-        }
-
-        public function setId($id)
-        {
-                $this->id = $id;
-
-                return $this;
-        }
 
         public function getTitulo(){
             return $this->titulo;

@@ -1,11 +1,11 @@
 <?php
     require("../models/administraContenido.php");
 
-    $borraPost = new AdministraContenido();
+    $administraContenido = new AdministraContenido();
 
-    $id = $_GET["post"];
+    $titulo = $_GET["name"];
 
-    $borraPost->borraPost($id); //post es el id para camuflarlo en el navegador.
+    $administraContenido->borraPost($titulo); //post es el id para camuflarlo en el navegador.
 
-    header("Location: /aprendiendoaprogramar.com/javascript.php");
+    header("Location: /aprendiendoaprogramar.com/view_section.php?section=javascript");
 ?>
