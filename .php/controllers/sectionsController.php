@@ -16,7 +16,6 @@ require(".php/models/administraContenido.php");
             $arrayPostsDev = $administraContenido->getPosts("SELECT * FROM post WHERE seccion ='". $seccion ."'");
             
             if($arrayPostsDev == 0){
-                echo "<p>EN CONSTRUCCION<p>";
                 return;
             }
             for ($post = count($arrayPostsDev) - 1; $post >= 0; $post--) { 
@@ -26,7 +25,7 @@ require(".php/models/administraContenido.php");
                     echo 
                     "<a href='view_post.php?post=". $arrayPostsDev[$post]->getTitulo() ."'>
                         <article id=articuloPrincipal>
-                            <img src='imagenes/codigo.jpg' alt=''>
+                            <img src='imagenes/".$arrayPostsDev[$post]->getUrlImagen()."' alt=''>
                             <h2>" . $arrayPostsDev[$post]->getTitulo() . "</h2>
                             <p>" . $this->recortarTexto($arrayPostsDev[$post]->getContenido(), 400) . "</p>";
                         
@@ -46,7 +45,7 @@ require(".php/models/administraContenido.php");
                     "<div>
                     <a href='view_post.php?post=". $arrayPostsDev[$post]->getTitulo() ."'>
                         <article>
-                        <img src='imagenes/codigo.jpg' alt=''>
+                        <img src='imagenes/".$arrayPostsDev[$post]->getUrlImagen()."' alt=''>
                         <h2>" . $arrayPostsDev[$post]->getTitulo() . "</h2>
                         <p>" . $this->recortarTexto($arrayPostsDev[$post]->getContenido(), 400) . "</p>";
 
@@ -67,7 +66,7 @@ require(".php/models/administraContenido.php");
                         echo
                         "<a href='view_post.php?post=". $arrayPostsDev[$post]->getTitulo() ."'>
                             <article>
-                                <img src='imagenes/codigo.jpg' alt=''>
+                            <img src='imagenes/".$arrayPostsDev[$post]->getUrlImagen()."' alt=''>
                                 <h2>" . $arrayPostsDev[$post]->getTitulo() . "</h2>
                                 <p>" . $this->recortarTexto($arrayPostsDev[$post]->getContenido(), 400) . "</p>";
 

@@ -17,7 +17,7 @@
 
             try {
                 
-                parent::__construct($this->host.';port=3308; dbname='.$this->nombre_bdd, $this->user, $this->pass);
+                parent::__construct($this->host.';port=3308; dbname='.$this->nombre_bdd, $this->user, $this->pass, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
 
                 parent::setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

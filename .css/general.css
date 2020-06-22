@@ -4,11 +4,26 @@ el navegador igual en todas las paginas*/
 
 /*Aqui empezamos nuestra hoja de estilos*/
 
+/*Estilos de fuentes*/
+strong{
+    font-weight: bold;
+}
+
+em{
+    font-style: italic;
+}
+
+u{
+    text-decoration: underline;
+}
+
+
+
+/*Estilos de elementos*/
 html{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: rgb(238, 238, 238);
 }
-
 
 nav{
     padding: 1% 5%;

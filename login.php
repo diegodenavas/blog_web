@@ -11,7 +11,6 @@
     <link rel="stylesheet" href=".css/login.css">
 
     <?php
-        include(".php/models/Usuario.php");
         session_start();
 
         if (isset($_SESSION["nick_usuario"])) header("Location: /aprendiendoaprogramar.com");
@@ -24,15 +23,16 @@
         require(".php/scripts/elementosComunes/nav.php");
     ?>
 
-    <div id="contenedorLogin">
+    <div id="contenedorLogin" class="contenedorFormulario">
         <form action="/aprendiendoaprogramar.com/.php/controllers/loginController.php" method="POST">
             <div id="contenedorTextos">
                 <label for="Usuario">Usuario</label>
                 <input type="text" name="nick">
                 <label for="Contraseña">Contraseña</label>
-                <input type="text" name="pass">
+                <input type="password" name="pass">
             </div>
             <input type="submit">
+            <p id="mensajeRegistro">¿Aun no tienes cuenta? <br><br><a href="registro.php">Registrate</a><p>
         </form>
     </div>
 </body>

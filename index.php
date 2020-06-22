@@ -17,7 +17,6 @@
 
     <!--Cargamos JQuery y los scripts de ésta página-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src=".js/general.js"></script>
     <script src=".js/index.js"></script>
 
     <?php

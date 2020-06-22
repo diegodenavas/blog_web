@@ -11,6 +11,10 @@
     <link rel="stylesheet" href=".css/estilosPaginasGeneral.css">
     <link rel="stylesheet" href=".css/nuevoPost.css">
 
+    <!--Cargamos JQuery y los scripts de ésta página-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src=".js/textEditor.js"></script>
+
     <?php
         session_start();
 
@@ -18,7 +22,7 @@
             header("Location: /aprendiendoaprogramar.com");
         }
     ?>
-
+    
 </head>
 <body>
     <?php
@@ -28,11 +32,19 @@
     <h1 id="tituloPagina">aprendiendoaprogramar > nuevo post</h1>
 
     <section>
-        <form action=".php/controllers/nuevoPostController.php" method="POST">
+        <form action=".php/controllers/nuevoPostController.php" method="POST" enctype="multipart/formdata">
+            <label for="imgPrincipal">Imagen principal</label>
+            <input type="file" name="imgPrincipal" id="imgPrincipal">
             <label for="titulo">Título</label>
             <input type="text" name="titulo">
             <label for="contenido">Contenido</label>
-            <textarea name="contenido"></textarea>
+            <div>
+                <span id="negrita">N</span>
+                <span id="cursiva">K</span>
+                <span id="subrayado">S</span>
+                <span><input type="file" name="imgIntoPost" id="imgIntoPost"></span>
+            </div>
+            <textarea name="contenido" id="content"></textarea>
             <select name="seccion">
                 <option>JavaScript</option>
                 <option>MySQL</option>

@@ -3,12 +3,14 @@
 
     class Post{
         
+        private $urlImagen;
         private $titulo;
         private $contenido;
         private $seccion;
         private $usuario;
 
-        public function __construct(String $titulo, String $contenido, $seccion, String $usuario){
+        public function __construct(String $urlImagen, String $titulo, String $contenido, $seccion, String $usuario){
+            $this->urlImagen=$urlImagen;
             $this->titulo=$titulo;
             $this->contenido=$contenido;
             $this->seccion=$seccion;
@@ -19,6 +21,17 @@
 
 
         //Getters & Setters
+
+        public function getUrlImagen()
+        {
+                return $this->urlImagen;
+        }
+
+        public function setUrlImagen($urlImagen)
+        {
+                $this->urlImagen = $urlImagen;
+        }
+
 
         public function getTitulo(){
             return $this->titulo;

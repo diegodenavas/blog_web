@@ -6,11 +6,11 @@ form{
 
 label{
     display: block;
-    font-family: sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bold;
 }
 
-input[type="text"]{
+input{
     width: 96%;
     margin: 2% 0% 10% 0%;
 }
@@ -41,12 +41,30 @@ input[type="submit"]:hover{
     display: flex;
     align-items: center;
     width: 20%;
-    height: 450px;
-    margin-top: 8%;
+    padding: 3% 0%;
     border: rgba(0, 0, 0, 0.7) 2px solid;
     box-shadow: rgb(72,27,154) 0px 0px 4px 2px;
+    margin-top: 10%;
 }
 
 #contenedorTextos{
     text-align: left;
+}
+
+#contenedorRegistro{
+    margin: auto;
+    display: flex;
+    align-items: center;
+    width: 25%;
+    padding: 3% 0%;
+    border: rgba(0, 0, 0, 0.7) 2px solid;
+    box-shadow: rgb(72,27,154) 0px 0px 4px 2px;
+    margin-top: 6%;
+}
+
+#mensajeRegistro{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 100%;
+    font-size: 0.8em;
+    margin-top: 35%;
 }
