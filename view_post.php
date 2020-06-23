@@ -10,6 +10,7 @@
     <link rel='stylesheet' href='.css/general.css'>
     <link rel='stylesheet' href='.css/estilosPaginasGeneral.css'>
     <link rel='stylesheet' href='.css/estilosSeccionesArticulos.css'>
+    <link rel='stylesheet' href='.css/viewPost.css'>
 
     <!--Cargamos jquery y nuestros scripts-->
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
@@ -24,6 +25,7 @@
 <body>
     <?php
     require('.php/scripts/elementosComunes/nav.php');
+    require_once('.php/models/conexionBDD.php');
     ?>
 
     <?php
@@ -33,9 +35,18 @@
         $post = $recibePost->getPosts('SELECT * FROM post WHERE titulo ="'. $miPost .'"');
 
         echo 
-        "<h1 id=tituloPagina>" . $post[0]->getTitulo() . "</h1>
-        
-        <section>
+        "<h1 id=tituloPagina>" . $post[0]->getTitulo() . "</h1>";
+
+            if(isset($_SESSION["nick_usuario"])){
+                if($_SESSION["nick_usuario"] == "admin"){
+                echo
+                "<div id='optionsAdminContainer'>
+                <a href='.php/controllers/borraPost.php?name=". $post[0]->getTitulo() ."'><p>Borrar</p></a>
+                </div>";
+                }
+            }
+        echo
+        "<section>
             <p>" . $post[0]->getContenido() . "</p>
         </section>";    
     ?>

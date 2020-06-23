@@ -32,8 +32,9 @@
     <h1 id="tituloPagina">aprendiendoaprogramar > nuevo post</h1>
 
     <section>
-        <form action=".php/controllers/nuevoPostController.php" method="POST" enctype="multipart/formdata">
+        <form action=".php/controllers/nuevoPostController.php" method="POST" enctype="multipart/form-data">
             <label for="imgPrincipal">Imagen principal</label>
+            <input type="hidden" name="MAX_FILE_SIZE" value="2000000"/>
             <input type="file" name="imgPrincipal" id="imgPrincipal">
             <label for="titulo">Título</label>
             <input type="text" name="titulo">
@@ -42,6 +43,7 @@
                 <span id="negrita">N</span>
                 <span id="cursiva">K</span>
                 <span id="subrayado">S</span>
+                <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
                 <span><input type="file" name="imgIntoPost" id="imgIntoPost"></span>
             </div>
             <textarea name="contenido" id="content"></textarea>

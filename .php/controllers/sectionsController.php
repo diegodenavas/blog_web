@@ -23,63 +23,39 @@ require(".php/models/administraContenido.php");
                 //Si el post es el primero le damos el id='articuloPrincipal' para darle el estilo del primer post
                 if($post == count($arrayPostsDev) - 1){
                     echo 
-                    "<a href='view_post.php?post=". $arrayPostsDev[$post]->getTitulo() ."'>
-                        <article id=articuloPrincipal>
-                            <img src='imagenes/".$arrayPostsDev[$post]->getUrlImagen()."' alt=''>
-                            <h2>" . $arrayPostsDev[$post]->getTitulo() . "</h2>
-                            <p>" . $this->recortarTexto($arrayPostsDev[$post]->getContenido(), 400) . "</p>";
-                        
-                            //Si la session está establecida y es de admin se muestran las etiquetas de borrar
-                            if(isset($_SESSION["nick_usuario"])){
-                                if($_SESSION["nick_usuario"] == "admin"){
-                                echo "<p><a href='.php/controllers/borraPost.php?name=". $arrayPostsDev[$post]->getTitulo() ."'>Borrar</a></p>";
-                                }
-                            }
+                    "<article id=articuloPrincipal>
+                        <img src='imagenes_posts/".$arrayPostsDev[$post]->getUrlImagen()."' alt=''>
+                        <h2>" . $arrayPostsDev[$post]->getTitulo() . "</h2>
+                        <p>" . $this->recortarTexto($arrayPostsDev[$post]->getContenido(), 400) . "</p>
+                        <a class='anclaLeerMas' href='view_post.php?post=". $arrayPostsDev[$post]->getTitulo() ."'><p>Leer más...</p></a>";
 
-                        echo 
-                        "</article>
-                    </a>";
+                    echo 
+                    "</article>";
                 }
                 else{ //Si el post no es el primero no le damos para darle el estilo de los demás post
                     echo 
                     "<div>
-                    <a href='view_post.php?post=". $arrayPostsDev[$post]->getTitulo() ."'>
                         <article>
-                        <img src='imagenes/".$arrayPostsDev[$post]->getUrlImagen()."' alt=''>
+                        <img src='imagenes_posts/".$arrayPostsDev[$post]->getUrlImagen()."' alt=''>
                         <h2>" . $arrayPostsDev[$post]->getTitulo() . "</h2>
-                        <p>" . $this->recortarTexto($arrayPostsDev[$post]->getContenido(), 400) . "</p>";
-
-                        //Si la session está establecida y es de admin se muestran las etiquetas de borrar
-                        if(isset($_SESSION["nick_usuario"])){
-                            if($_SESSION["nick_usuario"] == "admin"){
-                            echo "<p><a href='.php/controllers/borraPost.php?name=". $arrayPostsDev[$post]->getTitulo() ."'>Borrar</a></p>";
-                            }
-                        }
+                        <p>" . $this->recortarTexto($arrayPostsDev[$post]->getContenido(), 400) . "</p>
+                        <a class='anclaLeerMas' href='view_post.php?post=". $arrayPostsDev[$post]->getTitulo() ."'>Leer más...</a>";
 
                         echo 
-                        "</article>
-                    </a>";
+                        "</article>";
                     $post--;
                     
                     //Si dentro de los post que no son el primero hay otro post(ya que van en un div en parejas de 2), mostramos ese otro post.
                     if ($post >= 0) { 
                         echo
-                        "<a href='view_post.php?post=". $arrayPostsDev[$post]->getTitulo() ."'>
-                            <article>
-                            <img src='imagenes/".$arrayPostsDev[$post]->getUrlImagen()."' alt=''>
+                        "<article>
+                            <img src='imagenes_posts/".$arrayPostsDev[$post]->getUrlImagen()."' alt=''>
                                 <h2>" . $arrayPostsDev[$post]->getTitulo() . "</h2>
-                                <p>" . $this->recortarTexto($arrayPostsDev[$post]->getContenido(), 400) . "</p>";
-
-                                //Si la session está establecida y es de admin se muestran las etiquetas de borrar
-                                if(isset($_SESSION["nick_usuario"])){
-                                    if($_SESSION["nick_usuario"] == "admin"){
-                                    echo "<p><a href='.php/controllers/borraPost.php?name=". $arrayPostsDev[$post]->getTitulo() ."'>Borrar</a></p>";
-                                    }
-                                }
+                                <p>" . $this->recortarTexto($arrayPostsDev[$post]->getContenido(), 400) . "</p>
+                                <a class='anclaLeerMas' href='view_post.php?post=". $arrayPostsDev[$post]->getTitulo() ."'>Leer más...</a>";
                             
                             echo 
                             "</article>
-                        </a>
                         </div>";
                     }
                     else { //Si dentro de los post que no son el primero no hay otro post(ya que van en un div en parejas de 2), no mostramos ese otro post ya que daria error.

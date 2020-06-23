@@ -4,12 +4,26 @@
 
     session_start();
 
-    $imgPrincipal = $_POST["imgPrincipal"];
     $titulo = $_POST["titulo"];
     $contenido = $_POST["contenido"];
     $seccion = $_POST["seccion"];
 
-    $post = new Post($imgPrincipal, $titulo, $contenido, $seccion, $_SESSION["nick_usuario"]);
+    //Ruta de la carpeta destino en servidor
+    $imgName = $_FILES["imgPrincipal"]["name"];
+    $imgName_temp = $_FILES["imgPrincipal"]["tmp_name"];
+    $ruta = ".." . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "imagenes_posts" . DIRECTORY_SEPARATOR . $imgName;
+
+    var_dump($imgName_temp);
+
+    $post = new Post($imgName, $titulo, $contenido, $seccion, $_SESSION["nick_usuario"]);
+
+    //Movemos la imagen del directorio temporal al directorio escogido
+    if( move_uploaded_file($imgName_temp, $ruta)) {
+        echo "Fichero guardado con éxito";
+    }
+    else{
+        echo "Fichero no guardado";
+    }
 
     $conexionPost = new ConexionBDD();
 
@@ -20,4 +34,5 @@
         header("Location: /aprendiendoaprogramar.com/view_post.php?" . "post=".$post->getTitulo());
     }
 
+    
 ?>
