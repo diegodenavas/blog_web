@@ -5,7 +5,9 @@
 
     $titulo = $_GET["name"];
 
-    $administraContenido->borraPost($titulo); //post es el id para camuflarlo en el navegador.
+    $post = $administraContenido->getPosts("SELECT * FROM post WHERE titulo = '" . $titulo ."'");
 
-    header("Location: /aprendiendoaprogramar.com/view_section.php?section=javascript");
+    $administraContenido->borraPost($titulo);
+
+    header("Location: /aprendiendoaprogramar.com/view_section.php?section=" . $post[0]->getSeccion());
 ?>

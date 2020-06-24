@@ -39,7 +39,7 @@ require(".php/models/administraContenido.php");
                         <img src='imagenes_posts/".$arrayPostsDev[$post]->getUrlImagen()."' alt=''>
                         <h2>" . $arrayPostsDev[$post]->getTitulo() . "</h2>
                         <p>" . $this->recortarTexto($arrayPostsDev[$post]->getContenido(), 400) . "</p>
-                        <a class='anclaLeerMas' href='view_post.php?post=". $arrayPostsDev[$post]->getTitulo() ."'>Leer más...</a>";
+                        <a class='anclaLeerMas' href='view_post.php?post=". $arrayPostsDev[$post]->getTitulo() ."'><p>Leer más...</p></a>";
 
                         echo 
                         "</article>";
@@ -52,7 +52,7 @@ require(".php/models/administraContenido.php");
                             <img src='imagenes_posts/".$arrayPostsDev[$post]->getUrlImagen()."' alt=''>
                                 <h2>" . $arrayPostsDev[$post]->getTitulo() . "</h2>
                                 <p>" . $this->recortarTexto($arrayPostsDev[$post]->getContenido(), 400) . "</p>
-                                <a class='anclaLeerMas' href='view_post.php?post=". $arrayPostsDev[$post]->getTitulo() ."'>Leer más...</a>";
+                                <a class='anclaLeerMas' href='view_post.php?post=". $arrayPostsDev[$post]->getTitulo() ."'><p>Leer más...</p></a>";
                             
                             echo 
                             "</article>
