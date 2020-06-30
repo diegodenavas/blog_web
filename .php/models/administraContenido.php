@@ -20,16 +20,17 @@
 
             while ($fila = $statement->fetch(PDO::FETCH_BOTH)) {
 
-                $arrayPosts[$cont] = new Post($fila[1], $fila[2], nl2br($fila[3]), $fila[4], $fila[5]);
+                $arrayPosts[$cont] = new Post($fila[1], $fila[2], nl2br($fila[3]), $fila[4], $fila[5], $fila[6]);
 
                 $cont++;
             }
 
+            if(!isset($arrayPosts)){
+                return "No se ha ejecutado la consulta correctamente";
+            }
+
             $conex = null;
 
-            if(!isset($arrayPosts)){
-                return 0;
-            }
             return $arrayPosts;
         }
 
@@ -39,6 +40,8 @@
             $statement = $conex->ejecutarConsulta("DELETE FROM post WHERE titulo = '". $titulo ."'");
 
             $statement->execute();
+
+            $conex = null;
         }
 
 
@@ -73,6 +76,8 @@
             $statement = $conex->ejecutarConsulta("DELETE FROM usuario WHERE nick = '". $nick ."'");
 
             $statement->execute();
+
+            $conex = null;
         }
 
     }

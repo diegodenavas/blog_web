@@ -59,3 +59,23 @@ article>h2{
 .anclaLeerMas>p{
     margin: 6%;
 }
+
+#pestañaNuevoPostParrafo{
+    background: linear-gradient(90deg, rgba(113,196,21,1) 0%, rgba(3,142,26,1) 100%);
+    text-align: center;
+    padding: 1.5% 2%;
+    width: 9%;
+    border-radius: 5px;
+    box-shadow: black 1px 1px 3px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+#pestañaNuevoPostParrafo:hover{
+    background: linear-gradient(90deg, rgba(236,230,15,1) 0%, rgba(205,161,14,1) 100%);
+}
+
+#pestañaNuevoPost:link, #pestañaNuevoPost:visited, #pestañaNuevoPost:active {
+    text-decoration:none;
+    color: black;
+}

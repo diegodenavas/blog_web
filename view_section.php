@@ -14,8 +14,9 @@
     <!--Cargamos jquery y nuestros scripts-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src=".js/iconos.js"></script>
-
+    
     <?php
+        require(".php/controllers/sectionsController.php");
         session_start();
     ?>
 
@@ -32,8 +33,6 @@
         <section>
             
             <?php
-                require(".php/controllers/sectionsController.php");
-
                 $controlador = new SectionsController();
 
                 $controlador->muestraPost($_GET["section"]);
@@ -41,19 +40,16 @@
                 if(isset($_SESSION["nick_usuario"])){
                     if($_SESSION["nick_usuario"] == "admin"){
                         echo
-                        "<p id=pestañaNuevoPost><a href='nuevo_post.php'>Nuevo post</a></p>";
+                        "<a id=pestañaNuevoPost href='nuevo_post.php'><p id=pestañaNuevoPostParrafo>Nuevo post</p></a>";
                     }
                 }
             ?>
 
         </section>
         
-        <aside>
-            <h4>Post mas visitados</h4>
-            <p>Primeros pasos</p>
-            <p>Terminando el index</p>
-            <p>Creando contenido</p>
-        </aside>
+        <?php
+            require(".php/scripts/elementosComunes/aside.php");
+        ?>
     </div>
 </body>
 </html>

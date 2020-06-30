@@ -18,22 +18,36 @@
     <?php
         require('.php/models/administraContenido.php');
         require_once('.php/models/post.php');
+        require_once('.php/models/conexionBDD.php');
+        include(".php/models/visita.php");
+        require_once(".php/models/administraContenido.php");
         session_start();
-    ?>
-</head>
 
-<body>
-    <?php
-    require('.php/scripts/elementosComunes/nav.php');
-    require_once('.php/models/conexionBDD.php');
-    ?>
-
-    <?php
         $miPost = $_GET['post'];
 
         $recibePost = new AdministraContenido();
         $post = $recibePost->getPosts('SELECT * FROM post WHERE titulo ="'. $miPost .'"');
 
+        $tituloPost = str_replace(' ', '', $miPost);
+
+        if(!isset($_COOKIE[$tituloPost])){
+
+                $visita = new Visita();
+
+                $visita->addVisita($miPost);
+            
+                setcookie($tituloPost, "visitado", time()+14400);
+        }
+    ?>
+    
+</head>
+
+<body>
+    <?php
+    require('.php/scripts/elementosComunes/nav.php');
+    ?>
+
+    <?php
         echo 
         "<h1 id=tituloPagina>" . $post[0]->getTitulo() . "</h1>";
 
@@ -51,11 +65,8 @@
         </section>";    
     ?>
 
-    <aside>
-        <h4>Post mas visitados</h4>
-        <p>Primeros pasos</p>
-        <p>Terminando el index</p>
-        <p>Creando contenido</p>
-    </aside>
+    <?php
+        require(".php/scripts/elementosComunes/aside.php");
+    ?>
 </body>
 </html>

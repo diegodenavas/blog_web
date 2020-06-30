@@ -37,8 +37,6 @@
 
     }else{
         echo "Ha habido un error al validar la foto de portada<br>";
-        echo $_FILES["imgPrincipal"]["type"];
-        echo "<br>" . $_FILES["imgPrincipal"]["size"];
     }
 
 
