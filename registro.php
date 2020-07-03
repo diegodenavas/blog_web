@@ -50,5 +50,9 @@
             <input type="submit">
         </form>
     </div>
+
+    <?php
+        require(".php/scripts/elementosComunes/footer.php");
+    ?>
 </body>
 </html>

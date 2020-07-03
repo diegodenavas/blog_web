@@ -8,8 +8,9 @@
         private $contenido;
         private $seccion;
         private $usuario;
+        private $fecha;
 
-        public function __construct(String $urlImagen, String $titulo, String $contenido, $seccion, String $usuario){
+        public function __construct(String $urlImagen, String $titulo, String $contenido, String $seccion, String $usuario){
             $this->urlImagen=$urlImagen;
             $this->titulo=$titulo;
             $this->contenido=$contenido;
@@ -72,5 +73,15 @@
                 return $this;
         }
 
+
+        public function getFecha()
+        {
+                return $this->fecha;
+        }
+
+        public function setFecha($fecha)
+        {
+                $this->fecha = $fecha;
+        }
     }
 ?>

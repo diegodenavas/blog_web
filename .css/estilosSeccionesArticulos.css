@@ -12,10 +12,10 @@ section>div{
 article{
     display: inline-block;
     text-align: left;
-    width: 32%;
-    margin: 7% 8%;
+    width: 36%;
+    margin: 7% 6%;
     background-color: rgba(224, 224, 224, 0.5);
-    box-shadow: rgba(41, 41, 41, 0.5) 2px 2px 3px 2px;
+    box-shadow: rgba(41, 41, 41, 0.5) 0px 0px 3px 1px;
     transition: ease-in-out 0.5s 0s;
     
 }
@@ -44,7 +44,7 @@ article>h2{
     width: 84%;
     margin: 0% 8% 7% 8%;
     background-color: rgba(224, 224, 224, 0.5);
-    box-shadow: rgba(41, 41, 41, 0.5) 2px 2px 3px 2px;
+    box-shadow: rgba(41, 41, 41, 0.5) 0px 0px 3px 1px;
     transition: ease-in-out 0.5s 0s;
 }
 

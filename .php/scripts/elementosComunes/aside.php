@@ -1,12 +1,12 @@
 <aside>
-    <h4>Post mas visitados</h4>
+    <p class="titulosAside">Post mas visitados</p>
     <?php
         $administra = new AdministraContenido();
 
         $postMasVistos = $administra->getPosts("SELECT post.* FROM post INNER JOIN visita ON post.id=visita.id_post GROUP BY titulo ORDER BY count(titulo) desc LIMIT 10");
 
-        for ($i=1; $i <= count($postMasVistos); $i++) { 
-            echo "<p>" . $postMasVistos[$i]->getTitulo() . "</p>";
+        for ($i=0; $i < count($postMasVistos); $i++) { 
+            echo "<p class='enlacesAside'><a href='view_post?post=" . $postMasVistos[$i]->getTitulo() . "'>• " . $postMasVistos[$i]->getTitulo() . "</a></p>";
         }
     ?>
 </aside>

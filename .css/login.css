@@ -37,7 +37,7 @@ input[type="submit"]:hover{
 }
 
 #contenedorLogin{
-    margin: auto;
+    margin: 0% auto 10% auto;
     display: flex;
     align-items: center;
     width: 20%;
@@ -52,14 +52,13 @@ input[type="submit"]:hover{
 }
 
 #contenedorRegistro{
-    margin: auto;
+    margin: 6% auto 10% auto;
     display: flex;
     align-items: center;
     width: 25%;
     padding: 3% 0%;
     border: rgba(0, 0, 0, 0.7) 2px solid;
     box-shadow: rgb(72,27,154) 0px 0px 4px 2px;
-    margin-top: 6%;
 }
 
 #mensajeRegistro{

@@ -29,7 +29,7 @@
 
     <h1 id="tituloPagina">aprendiendoaprogramar > <?php echo $_GET["section"] ?></h1>
 
-    <div>
+    
         <section>
             
             <?php
@@ -50,6 +50,10 @@
         <?php
             require(".php/scripts/elementosComunes/aside.php");
         ?>
-    </div>
+    
+
+    <?php
+        require(".php/scripts/elementosComunes/footer.php");
+    ?>
 </body>
 </html>

@@ -16,6 +16,8 @@
     <script src=".js/textEditor.js"></script>
 
     <?php
+        require(".php/models/administraContenido.php");
+
         session_start();
 
         if($_SESSION["nick_usuario"] != "admin"){
@@ -31,6 +33,7 @@
 
     <h1 id="tituloPagina">aprendiendoaprogramar > nuevo post</h1>
 
+<div>
     <section>
         <form action=".php/controllers/nuevoPostController.php" method="POST" enctype="multipart/form-data">
             <label for="imgPrincipal">Imagen principal</label>
@@ -58,10 +61,13 @@
         </form>
     </section>
 
-    <aside>
-
-    </aside>
-
+    <?php
+        require(".php/scripts/elementosComunes/aside.php");
+    ?>
+    </div>
     
+    <?php
+        require(".php/scripts/elementosComunes/footer.php");
+    ?>
 </body>
 </html>

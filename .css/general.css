@@ -56,5 +56,50 @@ menu a{
 }
 
 menu a:hover{
-    color: rgb(224, 206, 37);
+    color: rgb(224, 221, 16);
+}
+
+
+/*Estilos del footer*/
+footer{
+    background-color: rgb(24, 24, 36);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    text-align: center;
+    padding: 2%;
+    padding-bottom: 1%;
+    box-shadow: black 1px 1px 2px 2px;
+}
+
+.divisionesFooter{
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+    margin-bottom: 2%;
+}
+
+footer>div:nth-child(2) {
+    border-right: rgb(185, 185, 185) 1px solid;
+    border-left: rgb(185, 185, 185) 1px solid;
+    padding: 0% 2% 5% 2%;
+}
+
+#copyrightMessage{
+    padding-top: 1%;
+    border-top: rgb(185, 185, 185) 1px solid;
+    font-size: 0.8em;
+    width: 90%;
+    margin: auto;
+}
+
+.iconosRRSS{
+    display: inline-block;
+    width: 7%;
+    margin: 4% 2% 0% 2%;
+    background-color: white;
+    transition: ease-in-out 0.4s;
+}
+
+.iconosRRSS:hover{
+    background-color: rgb(224, 221, 16);
 }

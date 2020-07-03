@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang='es'>
+<html lang="es">
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
     <!--Cargamos nuestras hojas de estilo-->
@@ -67,6 +67,10 @@
 
     <?php
         require(".php/scripts/elementosComunes/aside.php");
+    ?>
+
+    <?php
+        require(".php/scripts/elementosComunes/footer.php");
     ?>
 </body>
 </html>

@@ -35,5 +35,9 @@
             <p id="mensajeRegistro">¿Aun no tienes cuenta? <br><br><a href="registro.php">Registrate</a><p>
         </form>
     </div>
+
+    <?php
+        require(".php/scripts/elementosComunes/footer.php");
+    ?>
 </body>
 </html>

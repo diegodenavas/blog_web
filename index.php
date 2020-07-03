@@ -137,8 +137,8 @@
         </article>
     </section>
 
-    <footer>
-
-    </footer>
+    <?php
+        require(".php/scripts/elementosComunes/footer.php");
+    ?>
 </body>
 </html>
