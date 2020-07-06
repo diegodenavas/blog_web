@@ -19,8 +19,6 @@
         }
 
 
-
-
         //Getters & Setters
 
         public function getUrlImagen()

@@ -50,7 +50,8 @@
                 <span><input type="file" name="imgIntoPost" id="imgIntoPost"></span>
             </div>
             <textarea name="contenido" id="content"></textarea>
-            <select name="seccion">
+
+            <select name="seccion" value='$_'>
                 <option>JavaScript</option>
                 <option>MySQL</option>
                 <option>PHP</option>

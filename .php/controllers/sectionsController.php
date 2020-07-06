@@ -10,10 +10,10 @@ require(".php/models/administraContenido.php");
             $this->conexion = new ConexionBDD();
         }
 
-        function muestraPost(String $seccion){
+        function muestraPost(String $consulta){
             $administraContenido = new AdministraContenido();
 
-            $arrayPostsDev = $administraContenido->getPosts("SELECT * FROM post WHERE seccion ='". $seccion ."'");
+            $arrayPostsDev = $administraContenido->getPosts("$consulta");
             
             if($arrayPostsDev == 0){
                 return;
@@ -23,45 +23,30 @@ require(".php/models/administraContenido.php");
                 //Si el post es el primero le damos el id='articuloPrincipal' para darle el estilo del primer post
                 if($post == count($arrayPostsDev) - 1){
                     echo 
-                    "<article id=articuloPrincipal>
+                    "<a href='view_post.php?post=". $arrayPostsDev[$post]->getTitulo() ."' class='anclaArticulo'>
+                        <article id=articuloPrincipal>
                         <img src='imagenes_posts/".$arrayPostsDev[$post]->getUrlImagen()."' alt=''>
+                        <div>
                         <h2>" . $arrayPostsDev[$post]->getTitulo() . "</h2>
-                        <p>" . $this->recortarTexto($arrayPostsDev[$post]->getContenido(), 400) . "</p>
-                        <a class='anclaLeerMas' href='view_post.php?post=". $arrayPostsDev[$post]->getTitulo() ."'><p>Leer más...</p></a>";
+                        <p>" . $this->recortarTexto($arrayPostsDev[$post]->getContenido(), 500) . "</p>
+                        </div>";
 
                     echo 
-                    "</article>";
+                    "</article></a>";
                 }
                 else{ //Si el post no es el primero no le damos para darle el estilo de los demás post
                     echo 
-                    "<div>
-                        <article>
-                        <img src='imagenes_posts/".$arrayPostsDev[$post]->getUrlImagen()."' alt=''>
-                        <h2>" . $arrayPostsDev[$post]->getTitulo() . "</h2>
-                        <p>" . $this->recortarTexto($arrayPostsDev[$post]->getContenido(), 400) . "</p>
-                        <a class='anclaLeerMas' href='view_post.php?post=". $arrayPostsDev[$post]->getTitulo() ."'><p>Leer más...</p></a>";
-
-                        echo 
-                        "</article>";
-                    $post--;
+                    "<a href='view_post.php?post=". $arrayPostsDev[$post]->getTitulo() ."' class='anclaArticulo'>
+                    <article class=articulosSecundarios>
+                    <img src='imagenes_posts/".$arrayPostsDev[$post]->getUrlImagen()."' alt=''>
+                    <div>
+                    <h2>" . $arrayPostsDev[$post]->getTitulo() . "</h2>
+                    <p>" . $this->recortarTexto($arrayPostsDev[$post]->getContenido(), 300) . "</p>
                     
-                    //Si dentro de los post que no son el primero hay otro post(ya que van en un div en parejas de 2), mostramos ese otro post.
-                    if ($post >= 0) { 
-                        echo
-                        "<article>
-                            <img src='imagenes_posts/".$arrayPostsDev[$post]->getUrlImagen()."' alt=''>
-                                <h2>" . $arrayPostsDev[$post]->getTitulo() . "</h2>
-                                <p>" . $this->recortarTexto($arrayPostsDev[$post]->getContenido(), 400) . "</p>
-                                <a class='anclaLeerMas' href='view_post.php?post=". $arrayPostsDev[$post]->getTitulo() ."'><p>Leer más...</p></a>";
-                            
-                            echo 
-                            "</article>
-                        </div>";
-                    }
-                    else { //Si dentro de los post que no son el primero no hay otro post(ya que van en un div en parejas de 2), no mostramos ese otro post ya que daria error.
-                        echo 
-                        "</div>";
-                    }
+                    </div>";
+
+                    echo 
+                    "</article></a>";
                 }
             }
         }
@@ -79,7 +64,7 @@ require(".php/models/administraContenido.php");
                     $textoModif_post .= substr($texto, $i, 1);
 
                 }
-                return $textoModif_post . "...<br><br> <a>Leer más...</a>";
+                return $textoModif_post . "...";
             }
             else{
                 return $texto;

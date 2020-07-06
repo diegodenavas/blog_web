@@ -1,7 +1,7 @@
 <?php
-    require("ConexionBDD.php");
+    require_once("ConexionBDD.php");
     require("Post.php");
-    require("Usuario.php");
+    require_once("Usuario.php");
 
 
     class AdministraContenido{
@@ -55,11 +55,11 @@
 
             $statement->execute(array());
 
-            static $cont = 0;
+            $cont = 0;
 
             while ($fila = $statement->fetch(PDO::FETCH_BOTH)) {
 
-                $arrayUsuarios[$cont] = new Post($fila[1], nl2br($fila[2]), $fila[3], $fila[4]);
+                $arrayUsuarios[$cont] = new Usuario($fila[1], "", $fila[3], $fila[4], $fila[5], $fila[6], $fila[7], $fila[8]);
 
                 $cont++;
             }

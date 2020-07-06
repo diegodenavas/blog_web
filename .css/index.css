@@ -6,6 +6,7 @@ del index*/
 /*Damos estilo al header*/
 header{
     height: 795px;
+    margin-bottom: 5%;
     padding: 2% 2%;
     background-color: black;
     background-image: url(../imagenes/codigo.jpg);
@@ -13,6 +14,7 @@ header{
     background-position: center;
     background-size: cover;
     text-align: center;
+    box-shadow: black 0px 1px 2px 2px;
 }
 
 header h1, header h2, header p{
@@ -51,115 +53,3 @@ header img:hover{
     height: 10.5%;
 }
 /*Terminamos el estilo del header*/
-
-
-/*Atributos comunes a todos los artículos*/
-article{
-    height: 950px;
-    border-top: rgb(22, 35, 153) 3px solid;
-}
-
-article>a{
-    text-decoration: none;
-}
-
-/*Hacemos el estilo de las secciones pares*/
-.articulosPares{
-    text-align: right;
-    background-color: slateblue;
-}
-
-.articulosPares>div>h2{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 4em;
-    font-weight: bold;
-    margin: 0% 5% 4% 5%;
-    padding-top: 4%;
-}
-
-.articulosPares>div>p{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 2em;
-    margin: 2% 5% 10% auto;
-    width: 70%;
-}
-
-.articulosPares>a>div{
-    width: 22%;
-    margin: 2% 5% 10% auto;
-    padding: 0.2% 0.2%;
-    background-color: white;
-    text-align: center;
-    box-shadow: rgb(0, 0, 0) 0px 0px 5px 3px;
-    transition: ease-in-out 0.5s;
-}
-
-.articulosPares>a>div:hover{
-    background-color: rgb(0, 0, 0);
-    box-shadow: white 0px 0px 5px 3px;
-    color: white;
-}
-
-.articulosPares>a>div>div{
-    padding: 8% 0%;
-    border: black 2px solid;
-}
-
-.articulosPares>a>div>div>p {
-    font-family: fantasy;
-    font-size: 2.5em;
-}
-
-
-
-/*Hacemos el estilo de las secciones impares*/
-.articulosImpares{
-    text-align: left;
-    background-color: tan;
-}
-
-.articulosImpares>div>h2{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 4em;
-    font-weight: bold;
-    margin: 0% 5% 4% 5%;
-    padding-top: 4%;
-}
-
-.articulosImpares>div>p{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 2em;
-    margin: 2% auto 10% 5%;
-    width: 70%;
-}
-
-.articulosImpares>a>div{
-    width: 22%;
-    margin: 2% auto 10% 5%;
-    padding: 0.2% 0.2%;
-    background-color: black;
-    text-align: center;
-    box-shadow: rgb(255, 255, 255) 0px 0px 5px 3px;
-    transition: ease-in-out 0.5s;
-    color: white;
-}
-
-.articulosImpares>a>div:hover{
-    color: black;
-    background-color: rgb(255, 255, 255);
-    box-shadow: rgb(0, 0, 0) 0px 0px 5px 3px;
-}
-
-.articulosImpares>a>div>div{
-    padding: 8% 0%;
-    border: white 2px solid;
-}
-
-.articulosImpares>a>div>div>p {
-    font-family: fantasy;
-    font-size: 2.5em;
-}
-
-a{
-    color: black;
-}

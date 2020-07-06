@@ -35,7 +35,7 @@
             <?php
                 $controlador = new SectionsController();
 
-                $controlador->muestraPost($_GET["section"]);
+                $controlador->muestraPost("SELECT * FROM post WHERE seccion ='" . $_GET['section'] . "'");
 
                 if(isset($_SESSION["nick_usuario"])){
                     if($_SESSION["nick_usuario"] == "admin"){

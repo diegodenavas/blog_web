@@ -4,60 +4,80 @@ la web(javascript, php, mysql y java actualmente).
 
 Es decir, carga la apariencia de los artículos y del interior del aside*/
 
-section>div{
-    text-align: center;
-    border-top: rgb(206, 206, 206) 1px solid;
-}
 
 article{
-    display: inline-block;
-    text-align: left;
-    width: 36%;
-    margin: 7% 6%;
-    background-color: rgba(224, 224, 224, 0.5);
-    box-shadow: rgba(41, 41, 41, 0.5) 0px 0px 3px 1px;
+    margin: auto;
+    width: 90%;
+    border-bottom: rgb(180, 180, 180) 1px solid;
     transition: ease-in-out 0.5s 0s;
-    
+    padding: 5% 0%;
+    margin-bottom: 5%;
+}
+
+article p{
+    line-height : 140%;
+}
+
+.articulosSecundarios>img, .articulosSecundarios>div{
+    display: inline-block;
+    width: 40%;
+}
+
+.articulosSecundarios{
+    padding-left: 5%;
+}
+
+article>div{
+    width: 50%;
+    vertical-align: top;
+    margin-left: 5%;
 }
 
 article:hover{
     background-color: rgba(72,27,154,0.3);
 }
 
-img{
-    margin-bottom: 4%;
-    width: 100%;
-}
 
-article>h2, article>p{
-    margin: 3% 6%;
-}
-
-article>h2{
+article h2{
     font-weight: bold;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1.5em;
+    margin-bottom: 4%;
 }
 
 #articuloPrincipal{
-    text-align: left;
-    width: 84%;
-    margin: 0% 8% 7% 8%;
+    margin: auto;
+    margin-bottom: 5%;
+    padding-left: 5%;
     background-color: rgba(224, 224, 224, 0.5);
     box-shadow: rgba(41, 41, 41, 0.5) 0px 0px 3px 1px;
     transition: ease-in-out 0.5s 0s;
+}
+
+#articuloPrincipal>img{
+    width: 90%;
+    margin: auto;
+}
+
+.anclaArticulo:link, .anclaArticulo:visited, .anclaArticulo:active{
+    text-decoration:none;
+    color: black;
+}
+
+#articuloPrincipal>div{
+    width: 95%;
+    margin-left: 0%;
+    margin-top: 5%;
 }
 
 #articuloPrincipal:hover{
     background-color: rgba(72,27,154,0.3);
 }
 
-.iconoPapelera{
-    width: 2.5%;
-}
 
 .anclaLeerMas>p{
-    margin: 6%;
+    margin-top: 6%;
+    text-align: right;
 }
 
 #pestañaNuevoPostParrafo{
@@ -65,6 +85,7 @@ article>h2{
     text-align: center;
     padding: 1.5% 2%;
     width: 9%;
+    margin-top: 5%;
     border-radius: 5px;
     box-shadow: black 1px 1px 3px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;

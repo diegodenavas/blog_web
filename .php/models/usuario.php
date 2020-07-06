@@ -11,7 +11,7 @@
         private $dateRegister;
         private $email;
 
-        private function __construct(String $nick, String $pass, String $name, String $surname1, String $surname2, $birthday, $dateRegister, String $email){
+        public function __construct(String $nick, String $pass, String $name, String $surname1, String $surname2, $birthday, $dateRegister, String $email){
                 $this->nick=$nick;
                 $this->pass=$pass;
                 $this->name=$name;

@@ -14,21 +14,38 @@
     <link rel="stylesheet" href=".css/plantillaReset.css">
     <link rel="stylesheet" href=".css/general.css">
     <link rel="stylesheet" href=".css/index.css">
+    <link rel="stylesheet" href=".css/estilosPaginasGeneral.css">
+    <link rel="stylesheet" href=".css/estilosSeccionesArticulos.css">
 
     <!--Cargamos JQuery y los scripts de ésta página-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src=".js/index.js"></script>
 
     <?php
-        include(".php/models/usuario.php");
+        require(".php/controllers/sectionsController.php");
+        require_once(".php/models/usuario.php");
+        require(".php/controllers/aceptarCookiesController.php");
+
         session_start();
+
+        if(isset($_COOKIE["nick"])){
+            $_SESSION["nick_usuario"] = $_COOKIE["nick"];
+            $_SESSION["name"] = $_COOKIE["name"];
+            $_SESSION["surname1"] = $_COOKIE["surname1"];
+            $_SESSION["surname2"] = $_COOKIE["surname2"];
+            $_SESSION["birthday"] = $_COOKIE["birthday"];
+            $_SESSION["registerDate"] = $_COOKIE["registerDate"];
+            $_SESSION["email"] = $_COOKIE["email"];
+        }
     ?>
 
 </head>
 
 <body>
     <?php
+    var_dump($_COOKIE["cookiesAceptadas"]);
         require(".php/scripts/elementosComunes/nav.php");
+        require(".php/scripts/elementosComunes/aceptarCookies.php");
     ?>
 
     <header id="cabecera">
@@ -44,98 +61,25 @@
     </header>
 
     <section>
-        <article class="articulosImpares">
-            <div>
-                <h2>JavaScript</h2>
-                <p>Empezamos con el lenguaje del momento. Este lenguaje está teniendo 
-                    un crecimiento exponencial en los últimos tiempos a parte de contar 
-                    con una comunidad enorme gracias a la que puedes encontrar información 
-                    sin demasiados problemas tanto para aprender cómo para resolver dudas.
-                    <br><br>
-                    Además gracias a node.js ahora también podremos programár el backend 
-                    de nuestras aplicaciones web.
-                    <br><br>
-                    Nuestros primeros post tratarán sobre el aprendizaje en Javascript ya 
-                    que estamos programando este blog con el.
-                </p>
-            </div>
 
-            <a href="view_section.php?section=JavaScript"><div>
-                <div>
-                    <p>Ir al contenido</p>
-                </div>
-            </div></a>
-        </article>
+        <?php
+            $controlador = new SectionsController();
 
-        <article class="articulosPares">
-            <div>
-                <h2>PHP</h2>
-                <p>Empezamos con el lenguaje del momento. Este lenguaje está teniendo 
-                    un crecimiento exponencial en los últimos tiempos a parte de contar 
-                    con una comunidad enorme gracias a la que puedes encontrar información 
-                    sin demasiados problemas tanto para aprender cómo para resolver dudas.
-                    <br><br>
-                    Además gracias a node.js ahora también podremos programár el backend 
-                    de nuestras aplicaciones web.
-                    <br><br>
-                    Nuestros primeros post tratarán sobre el aprendizaje en Javascript ya 
-                    que estamos programando este blog con el.
-                </p>
-            </div>
+            $controlador->muestraPost("SELECT * FROM post");
 
-            <a href="view_section.php?section=PHP"><div>
-                <div>
-                    <p>Ir al contenido</p>
-                </div>
-            </div></a>
-        </article>
+            if(isset($_SESSION["nick_usuario"])){
+                if($_SESSION["nick_usuario"] == "admin"){
+                    echo
+                    "<a id=pestañaNuevoPost href='nuevo_post.php'><p id=pestañaNuevoPostParrafo>Nuevo post</p></a>";
+                }
+            }    
+        ?>
 
-        <article class="articulosImpares">
-            <div>
-                <h2>MySQL</h2>
-                <p>Empezamos con el lenguaje del momento. Este lenguaje está teniendo 
-                    un crecimiento exponencial en los últimos tiempos a parte de contar 
-                    con una comunidad enorme gracias a la que puedes encontrar información 
-                    sin demasiados problemas tanto para aprender cómo para resolver dudas.
-                    <br><br>
-                    Además gracias a node.js ahora también podremos programár el backend 
-                    de nuestras aplicaciones web.
-                    <br><br>
-                    Nuestros primeros post tratarán sobre el aprendizaje en Javascript ya 
-                    que estamos programando este blog con el.
-                </p>
-            </div>
-
-            <a href="view_section.php?section=MySQL"><div>
-                <div>
-                    <p>Ir al contenido</p>
-                </div>
-            </div></a>
-        </article>
-
-        <article class="articulosPares">
-            <div>
-                <h2>Java</h2>
-                <p>Empezamos con el lenguaje del momento. Este lenguaje está teniendo 
-                    un crecimiento exponencial en los últimos tiempos a parte de contar 
-                    con una comunidad enorme gracias a la que puedes encontrar información 
-                    sin demasiados problemas tanto para aprender cómo para resolver dudas.
-                    <br><br>
-                    Además gracias a node.js ahora también podremos programár el backend 
-                    de nuestras aplicaciones web.
-                    <br><br>
-                    Nuestros primeros post tratarán sobre el aprendizaje en Javascript ya 
-                    que estamos programando este blog con el.
-                </p>
-            </div>
-
-            <a href="view_section.php?section=Java"><div>
-                <div>
-                    <p>Ir al contenido</p>
-                </div>
-            </div></a>
-        </article>
     </section>
+
+    <?php
+        require(".php/scripts/elementosComunes/aside.php");
+    ?>
 
     <?php
         require(".php/scripts/elementosComunes/footer.php");

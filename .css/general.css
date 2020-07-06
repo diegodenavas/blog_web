@@ -103,3 +103,49 @@ footer>div:nth-child(2) {
 .iconosRRSS:hover{
     background-color: rgb(224, 221, 16);
 }
+
+/*Aceptar cookies*/
+#aceptarCookies{
+    background-color: black;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.1em;
+    line-height : 120%;
+    padding: 1% 3%;
+    position: absolute;
+    left:0px; /*A la derecha deje un espacio de 0px*/
+    right:0px; /*A la izquierda deje un espacio de 0px*/
+    bottom:0px; /*Abajo deje un espacio de 0px*/
+    height:50px; /*alto del div*/
+    z-index:0;
+    position: fixed;
+}
+
+#aceptarCookies>p, #aceptarCookies>form{
+    display: inline-block;
+    width: 84%;
+}
+
+#aceptarCookies>form{
+    width: 15%;
+    vertical-align: top;
+}
+
+input{
+    display: inline-block;
+    width: 38%;
+}
+
+input[name="aceptar"]{
+    background-color: rgb(43, 228, 19);
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-left: 10%;
+}
+
+input[name="denegar"]{
+    background-color: rgb(197, 1, 1);
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-left: 10%;
+}

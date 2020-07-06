@@ -30,6 +30,13 @@
                 <input type="text" name="nick">
                 <label for="Contraseña">Contraseña</label>
                 <input type="password" name="pass">
+                <?php
+                    if(isset($_COOKIE["cookiesAceptadas"])){
+                        echo
+                        "<input type='checkbox' name='recordarDatos'>
+                        <label for='recordar'>Recordar en este equipo</label>";
+                    }
+                ?>
             </div>
             <input type="submit">
             <p id="mensajeRegistro">¿Aun no tienes cuenta? <br><br><a href="registro.php">Registrate</a><p>
