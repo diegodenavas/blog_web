@@ -14,6 +14,7 @@
     <!--Cargamos JQuery y los scripts de ésta página-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src=".js/textEditor.js"></script>
+    <script src=".js/eliminarDivCookies.js"></script>
 
     <?php
         require(".php/models/administraContenido.php");
@@ -29,6 +30,7 @@
 <body>
     <?php
         require(".php/scripts/elementosComunes/nav.php");
+        require(".php/scripts/elementosComunes/aceptarCookies.php");
     ?>
 
     <h1 id="tituloPagina">aprendiendoaprogramar > nuevo post</h1>

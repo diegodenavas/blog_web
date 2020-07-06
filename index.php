@@ -20,11 +20,11 @@
     <!--Cargamos JQuery y los scripts de ésta página-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src=".js/index.js"></script>
+    <script src=".js/eliminarDivCookies.js"></script>
 
     <?php
         require(".php/controllers/sectionsController.php");
         require_once(".php/models/usuario.php");
-        require(".php/controllers/aceptarCookiesController.php");
 
         session_start();
 
@@ -43,7 +43,6 @@
 
 <body>
     <?php
-    var_dump($_COOKIE["cookiesAceptadas"]);
         require(".php/scripts/elementosComunes/nav.php");
         require(".php/scripts/elementosComunes/aceptarCookies.php");
     ?>
