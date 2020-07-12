@@ -60,6 +60,8 @@
             while ($fila = $statement->fetch(PDO::FETCH_BOTH)) {
 
                 $arrayUsuarios[$cont] = new Usuario($fila[1], "", $fila[3], $fila[4], $fila[5], $fila[6], $fila[7], $fila[8]);
+                $arrayUsuarios[$cont]->setRol($fila[9]);
+                $arrayUsuarios[$cont]->setId($fila[0]);
 
                 $cont++;
             }

@@ -11,10 +11,13 @@
     <link rel='stylesheet' href='.css/estilosPaginasGeneral.css'>
     <link rel='stylesheet' href='.css/estilosSeccionesArticulos.css'>
     <link rel='stylesheet' href='.css/viewPost.css'>
+    <link rel="stylesheet" href=".css/nuevoPost.css">
 
     <!--Cargamos jquery y nuestros scripts-->
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+    <script src=".js/iconos.js"></script>
     <script src=".js/eliminarDivCookies.js"></script>
+    <script src=".js/editarPost.js"></script>
 
     <?php
         require('.php/models/administraContenido.php');
@@ -23,6 +26,8 @@
         include(".php/models/visita.php");
         require_once(".php/models/administraContenido.php");
         session_start();
+
+        require(".php/scripts/elementosComunes/cookieRecordarSesion.php");
 
         $miPost = $_GET['post'];
 
@@ -54,16 +59,17 @@
         "<h1 id=tituloPagina>" . $post[0]->getTitulo() . "</h1>";
 
             if(isset($_SESSION["nick_usuario"])){
-                if($_SESSION["nick_usuario"] == "admin"){
+                if(($_SESSION["rol"] == 3 || $_SESSION["rol"] == 4) || ($_SESSION["rol"] == 2 && $post[0]->getUsuario() == $_SESSION["id"])){
                 echo
                 "<div id='optionsAdminContainer'>
-                <a href='.php/controllers/borraPost.php?name=". $post[0]->getTitulo() ."'><p>Borrar</p></a>
+                <a href='#'><img src='imagenes/editar.png' class='iconosAdministracionPost' id='editar'></a>
+                <a href='.php/controllers/borraPost.php?name=". $post[0]->getTitulo() ."'><img src='imagenes/icono_papelera_cerrada.png' class='iconosAdministracionPost' id='iconoPapelera'></a>
                 </div>";
                 }
             }
         echo
         "<section>
-            <p>" . $post[0]->getContenido() . "</p>
+            <p id='cuerpoPost'>" . $post[0]->getContenido() . "</p>
         </section>";    
     ?>
 

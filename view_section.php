@@ -19,6 +19,8 @@
     <?php
         require(".php/controllers/sectionsController.php");
         session_start();
+
+        require(".php/scripts/elementosComunes/cookieRecordarSesion.php");
     ?>
 
 </head>
@@ -39,8 +41,8 @@
 
                 $controlador->muestraPost("SELECT * FROM post WHERE seccion ='" . $_GET['section'] . "'");
 
-                if(isset($_SESSION["nick_usuario"])){
-                    if($_SESSION["nick_usuario"] == "admin"){
+                if(isset($_SESSION["rol"])){
+                    if($_SESSION["rol"] == 2 || $_SESSION["rol"] == 3 || $_SESSION["rol"] == 4){
                         echo
                         "<a id=pestañaNuevoPost href='nuevo_post.php'><p id=pestañaNuevoPostParrafo>Nuevo post</p></a>";
                     }

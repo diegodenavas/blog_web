@@ -30,6 +30,7 @@ select{
 }
 
 span{
+    background-color: rgb(247, 247, 247);
     border: black 1px solid;
     padding: 0.1% 0.5%;
     font-family: 'Courier New', Courier, monospace;

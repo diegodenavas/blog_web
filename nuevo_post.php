@@ -21,7 +21,9 @@
 
         session_start();
 
-        if($_SESSION["nick_usuario"] != "admin"){
+        require(".php/scripts/elementosComunes/cookieRecordarSesion.php");
+        
+        if(!isset($_SESSION["rol"]) || (!$_SESSION["rol"] == 2 || !$_SESSION["rol"] == 3)){
             header("Location: /aprendiendoaprogramar.com");
         }
     ?>
@@ -53,7 +55,7 @@
             </div>
             <textarea name="contenido" id="content"></textarea>
 
-            <select name="seccion" value='$_'>
+            <select name="seccion">
                 <option>JavaScript</option>
                 <option>MySQL</option>
                 <option>PHP</option>

@@ -28,15 +28,7 @@
 
         session_start();
 
-        if(isset($_COOKIE["nick"])){
-            $_SESSION["nick_usuario"] = $_COOKIE["nick"];
-            $_SESSION["name"] = $_COOKIE["name"];
-            $_SESSION["surname1"] = $_COOKIE["surname1"];
-            $_SESSION["surname2"] = $_COOKIE["surname2"];
-            $_SESSION["birthday"] = $_COOKIE["birthday"];
-            $_SESSION["registerDate"] = $_COOKIE["registerDate"];
-            $_SESSION["email"] = $_COOKIE["email"];
-        }
+        require(".php/scripts/elementosComunes/cookieRecordarSesion.php");
     ?>
 
 </head>

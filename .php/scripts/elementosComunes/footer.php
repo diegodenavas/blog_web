@@ -7,7 +7,7 @@
     </div>
 
     <div class="divisionesFooter">
-        <p>Este blog ha sido creado con el propósito de dar una visión de como enfocar el aprendizaje a la programación a la gente que está intentando aprender, 
+        <p>Este blog ha sido creado con el propósito de dar una visión de como enfocar el aprendizaje a la programación a la gente que lo está efectuando de manera autodidacta, 
         pero no intenta enseñar de forma técnica los fundamentos de la programación</p>
     </div>
 

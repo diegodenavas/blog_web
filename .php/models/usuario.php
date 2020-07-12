@@ -2,6 +2,7 @@
         require_once("conexionBDD.php");
 
     class Usuario{
+        private $id;
         private $nick;
         private $pass;
         private $name;
@@ -10,6 +11,7 @@
         private $birthday;
         private $dateRegister;
         private $email;
+        private $rol;
 
         public function __construct(String $nick, String $pass, String $name, String $surname1, String $surname2, $birthday, $dateRegister, String $email){
                 $this->nick=$nick;
@@ -56,6 +58,7 @@
                                 $this->birthday=$fila[0][6];
                                 $this->dateRegister=$fila[0][7];
                                 $this->email=$fila[0][8];
+                                $this->rol=$fila[0][9];
                                 
                                 $conexionBDD = null;
                                 return true;
@@ -161,6 +164,28 @@
         public function setDateRegister($dateRegister)
         {
                 $this->dateRegister = $dateRegister;
+        }
+
+
+        public function getRol()
+        {
+                return $this->rol;
+        }
+
+        public function setRol($rol)
+        {
+                $this->rol = $rol;
+        }
+
+
+        public function getId()
+        {
+                return $this->id;
+        }
+
+        public function setId($id)
+        {
+                $this->id = $id;
         }
     }
 ?>

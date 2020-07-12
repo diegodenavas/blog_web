@@ -19,6 +19,8 @@
     <?php
         session_start();
 
+        require(".php/scripts/elementosComunes/cookieRecordarSesion.php");
+
         if (isset($_SESSION["nick_usuario"])) header("Location: /aprendiendoaprogramar.com");
     ?>
 

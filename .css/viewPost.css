@@ -1,7 +1,17 @@
 #tituloPagina, #optionsAdminContainer{
     display: inline-block;
+    width: 36%;
 }
 
 #optionsAdminContainer{
     margin-left: 20%;
+}
+
+.iconosAdministracionPost{
+    width: 4%;
+}
+
+#editar{
+    margin-right: 1.5%;
+    
 }
