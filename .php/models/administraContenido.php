@@ -3,9 +3,7 @@
     require("Post.php");
     require_once("Usuario.php");
 
-
     class AdministraContenido{
-
 
         //Methods
 

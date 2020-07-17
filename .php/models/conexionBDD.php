@@ -12,8 +12,32 @@
 
             $this->host = "mysql:host=localhost";
             $this->nombre_bdd = "blog";
-            $this->user = "root";
-            $this->pass = "";
+            
+            if(isset($_SESSION["rol"])){
+
+                if($_SESSION["rol"] == 2){
+                        $this->user = "autor";
+                        $this->pass = "EVnfB1p";
+        
+                }elseif($_SESSION["rol"] == 3){
+                        $this->user = "moderador";
+                        $this->pass = "Y3mlKIK";
+
+                }elseif($_SESSION["rol"] == 4){
+                        $this->user = "administrador";
+                        $this->pass = "G3Mtcq4";
+
+                }else{
+                        $this->user = "invitado";
+                        $this->pass = "FnPkk06";
+                }
+
+            }else{
+                $this->user = "invitado";
+                $this->pass = "FnPkk06";
+            }
+            
+
 
             try {
                 
