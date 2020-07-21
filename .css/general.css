@@ -19,14 +19,19 @@ u{
 
 
 
-/*Estilos de elementos*/
+/*Estilos del menu*/
 html{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: rgb(238, 238, 238);
+    height: 100%;
 }
 
-nav{
-    padding: 1% 5%;
+body{
+    height: 100%;
+}
+
+#navCompleto{
+    padding: 18px 5%;
     background: linear-gradient(90deg, rgb(41, 19, 107) 23%, rgba(72,27,154,1) 80%, rgba(89,30,215,1) 100%);
     box-shadow: rgba(89,30,215,0.6) 0px 2px 3px;
     font-family: sans-serif;
@@ -35,9 +40,19 @@ nav{
     color: white;
 }
 
+#iconoMenu{
+    display: none;
+    background-image: url("../imagenes/icono_menu.png");
+    background-position: center;
+    background-size: contain;
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+}
+
 .divisionesMenu{
     display: inline-block;
-    width: 48%;
+    width: 49%;
 }
 
 .elementosMenu{
@@ -47,6 +62,7 @@ nav{
 
 #logoMenu{
     text-align: right;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 menu a{
@@ -57,6 +73,47 @@ menu a{
 
 menu a:hover{
     color: rgb(224, 221, 16);
+}
+
+
+/*Estilos del navegador movil*/
+#navMobile{
+    display: none;
+    position: absolute;
+    position: fixed;
+    background: linear-gradient(90deg, rgb(41, 19, 107) 23%, rgba(72,27,154,1) 80%, rgba(89,30,215,1) 100%);
+    box-shadow: rgba(89,30,215,0.6) 0px 2px 3px;
+    font-weight: bold;
+    font-size: 1.1em;
+    height: 100%;
+}
+
+.opcionesMenu{
+    border-bottom: rgb(25, 15, 59) 1.5px solid;
+    padding: 20px 40px;
+}
+
+#ultimoLi{
+    padding: 20px 40px;
+}
+
+#navMobile a{
+    color: white;
+}
+
+#navMobile a:link, #navMobile a:visited, #navMobile a:active {
+    text-decoration:none;
+}
+
+#iconoMenuMobile{
+    background-image: url("../imagenes/icono_menu.png");
+    background-position: center;
+    background-size: contain;
+    height: 35px;
+    width: 35px;
+    margin-left: 30px;
+    margin-top: 11px;
+    cursor: pointer;
 }
 
 
@@ -94,7 +151,7 @@ footer>div:nth-child(2) {
 
 .iconosRRSS{
     display: inline-block;
-    width: 7%;
+    width: 38px;
     margin: 4% 2% 0% 2%;
     background-color: white;
     transition: ease-in-out 0.4s;
@@ -106,46 +163,200 @@ footer>div:nth-child(2) {
 
 /*Aceptar cookies*/
 #aceptarCookies{
+    position: absolute;
+    position: fixed;
     background-color: black;
     color: white;
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.1em;
     line-height : 120%;
-    padding: 1% 3%;
-    position: absolute;
-    left:0px; /*A la derecha deje un espacio de 0px*/
-    right:0px; /*A la izquierda deje un espacio de 0px*/
+    padding: 1% 0% 1% 3%;
     bottom:0px; /*Abajo deje un espacio de 0px*/
-    height:50px; /*alto del div*/
+    height:70px; /*alto del div*/
     z-index:0;
-    position: fixed;
 }
 
 #aceptarCookies>p, #aceptarCookies>form{
     display: inline-block;
-    width: 84%;
+}
+
+#aceptarCookies>p{
+    width: 85%;
 }
 
 #aceptarCookies>form{
-    width: 15%;
+    width: 10%;
     vertical-align: top;
 }
 
-input{
+.botonesCookies{
     display: inline-block;
-    width: 38%;
+    width: 100px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
 }
 
 input[name="aceptar"]{
     background-color: rgb(43, 228, 19);
     font-weight: bold;
     font-size: 1.2em;
-    margin-left: 10%;
+    margin-left: 20%;
+    margin-bottom: 5%;
 }
 
 input[name="denegar"]{
     background-color: rgb(197, 1, 1);
     font-weight: bold;
     font-size: 1.2em;
-    margin-left: 10%;
+    margin-left: 20%;
+    margin-bottom: 5%;
 }
+
+
+/*DISEÑO RESPONSIVE */
+
+@media(max-width: 1453px){
+
+    .divisionesMenu:first-child{
+        width: 52%;
+    }
+
+    #logoMenu{
+        width: 43%;
+    }
+
+    .elementosMenu{
+        margin-right: 6%;
+    }
+
+    #navCompleto{
+        padding-right: 4%;
+    }
+
+}
+
+@media(max-width: 1343px){
+
+    .divisionesMenu:first-child{
+        width: 56%;
+    }
+
+    #logoMenu{
+        width: 38%;
+    }
+
+    .elementosMenu{
+        margin-right: 5%;
+    }
+
+    #navCompleto{
+        padding-right: 3%;
+    }
+
+}
+
+@media(max-width: 1250px){
+
+    .elementosMenu{
+        margin-right: 4%;
+    }
+
+    #navCompleto{
+        padding-right: 2%;
+    }
+
+}
+
+@media(max-width: 1126px){
+
+    menu>ul{
+        display: none !important;
+    }
+
+    menu{
+        padding-right: 4.8%;
+    }
+
+    #navCompleto{
+        padding: 11px 4%;
+    }
+
+    #logoMenu{
+        width: 90%;
+        vertical-align: top;
+        margin-top: 7px;
+    }
+
+    #iconoMenu, menu>p{
+        display: inline-block;
+    }
+
+    #aceptarCookies>p{
+        width: 80%;
+    }
+
+    #aceptarCookies>p{
+        width: 75%;
+    }
+
+    #aceptarCookies{
+        height: 80px;
+    }
+
+}
+
+@media(max-width: 753px){
+
+    #aceptarCookies{
+        height: 105px;
+    }
+
+}
+
+@media(max-width: 638px){
+
+    #aceptarCookies{
+        height: 120px;
+    }
+
+}
+
+@media(max-width: 600px){
+
+    footer>div>p{
+        font-size: 0.8em;
+    }
+
+    .iconosRRSS{
+        width: 30px;
+    }
+
+    #copyrightMessage{
+        font-size: 0.6em;
+    }
+
+    #aceptarCookies>p{
+        width: 70%;
+    }
+
+}
+
+@media(max-width: 583px){
+
+    #aceptarCookies{
+        height: 145px;
+    }
+
+}
+
+@media(max-width: 529px){
+
+    #aceptarCookies{
+        height: 165px;
+    }
+
+}
+
+
+

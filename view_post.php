@@ -18,6 +18,7 @@
     <script src=".js/iconos.js"></script>
     <script src=".js/eliminarDivCookies.js"></script>
     <script src=".js/editarPost.js"></script>
+    <script src=".js/menuDesplegable.js"></script>
 
     <?php
         require('.php/models/administraContenido.php');
@@ -50,13 +51,14 @@
 
 <body>
     <?php
-    require('.php/scripts/elementosComunes/nav.php');
-    require(".php/scripts/elementosComunes/aceptarCookies.php");
+        require(".php/scripts/elementosComunes/navMobile.php");
+        require('.php/scripts/elementosComunes/nav.php');
+        require(".php/scripts/elementosComunes/aceptarCookies.php");
     ?>
 
     <?php
         echo 
-        "<h1 id=tituloPagina>" . $post[0]->getTitulo() . "</h1>";
+        "<h1 id='tituloPost'>" . $post[0]->getTitulo() . "</h1>";
 
             if(isset($_SESSION["nick_usuario"])){
                 if(($_SESSION["rol"] == 3 || $_SESSION["rol"] == 4) || ($_SESSION["rol"] == 2 && $post[0]->getUsuario() == $_SESSION["id"])){

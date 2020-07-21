@@ -1,4 +1,4 @@
-form{
+#login, #registro{
     width: 40%;
     margin: auto;
     text-align: center;
@@ -10,7 +10,7 @@ label{
     font-weight: bold;
 }
 
-input{
+.loginInput{
     width: 96%;
     margin: 2% 0% 10% 0%;
 }
@@ -50,14 +50,13 @@ input[type="submit"]:hover{
 }
 
 #contenedorLogin{
-    margin: 0% auto 10% auto;
+    margin: 10% auto 10% auto;
     display: flex;
     align-items: center;
-    width: 20%;
+    width: 370px;
     padding: 3% 0%;
     border: rgba(0, 0, 0, 0.7) 2px solid;
     box-shadow: rgb(72,27,154) 0px 0px 4px 2px;
-    margin-top: 10%;
 }
 
 #contenedorTextos{
@@ -68,7 +67,7 @@ input[type="submit"]:hover{
     margin: 6% auto 10% auto;
     display: flex;
     align-items: center;
-    width: 25%;
+    width: 370px;
     padding: 3% 0%;
     border: rgba(0, 0, 0, 0.7) 2px solid;
     box-shadow: rgb(72,27,154) 0px 0px 4px 2px;
@@ -79,4 +78,23 @@ input[type="submit"]:hover{
     width: 100%;
     font-size: 0.8em;
     margin-top: 35%;
+}
+
+
+
+/*DISEÑO RESPONSIVE*/
+
+@media(max-width: 720px){
+
+    #contenedorLogin{
+        border: none;
+        box-shadow: none;
+        
+    }
+
+    #contenedorRegistro{
+        border: none;
+        box-shadow: none;
+    }
+
 }

@@ -13,6 +13,8 @@
     <!--Cargamos JQuery y los scripts de ésta página-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src=".js/eliminarDivCookies.js"></script>
+    <script src=".js/login.js"></script>
+    <script src=".js/menuDesplegable.js"></script>
 
     <?php
         session_start();
@@ -26,17 +28,18 @@
 
 <body>
     <?php
+        require(".php/scripts/elementosComunes/navMobile.php");
         require(".php/scripts/elementosComunes/nav.php");
         require(".php/scripts/elementosComunes/aceptarCookies.php");
     ?>
 
     <div id="contenedorLogin" class="contenedorFormulario">
-        <form action="/aprendiendoaprogramar.com/.php/controllers/loginController.php" method="POST">
+        <form action="/aprendiendoaprogramar.com/.php/controllers/loginController.php" method="POST" id="login">
             <div id="contenedorTextos">
                 <label for="Usuario">Usuario</label>
-                <input type="text" name="nick">
+                <input type="text" name="nick" class="loginInput">
                 <label for="Contraseña">Contraseña</label>
-                <input type="password" name="pass">
+                <input type="password" name="pass" class="loginInput">
                 <?php
                     if(isset($_COOKIE["cookiesAceptadas"])){
                         echo

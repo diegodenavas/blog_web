@@ -14,7 +14,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src=".js/comprobarPass.js"></script>
     <script src=".js/eliminarDivCookies.js"></script>
-
+    <script src=".js/menuDesplegable.js"></script>
 
     <?php
         session_start();
@@ -27,31 +27,32 @@
 </head>
 <body>
     <?php
+        require(".php/scripts/elementosComunes/navMobile.php");
         require(".php/scripts/elementosComunes/nav.php");
         require(".php/scripts/elementosComunes/aceptarCookies.php");
     ?>
 
     <div id="contenedorRegistro" >
-        <form action="/aprendiendoaprogramar.com/.php/controllers/registroController.php" method="POST" accept-charset="utf-8">
+        <form action="/aprendiendoaprogramar.com/.php/controllers/registroController.php" method="POST" accept-charset="utf-8" id="registro">
             <div id="contenedorTextos">
                 <label for="Usuario">Usuario</label>
-                <input type="text" name="nick">
+                <input type="text" name="nick" class="loginInput">
                 <label for="Contraseña">Contraseña</label>
-                <input type="password" name="pass" id="pass">
+                <input type="password" name="pass" id="pass" class="loginInput">
                 <label for="RepiteContraseña">Repite la contraseña</label>
-                <input type="password" name="repeatPass" id="replypass">
+                <input type="password" name="repeatPass" id="replypass" class="loginInput">
                 <label for="Nombre">Nombre</label>
-                <input type="text" name="name">
+                <input type="text" name="name" class="loginInput">
                 <label for="Apellido1">Primer apellido</label>
-                <input type="text" name="surname1">
+                <input type="text" name="surname1" class="loginInput">
                 <label for="Apellido2">Segundo apellido</label>
-                <input type="text" name="surname2">
+                <input type="text" name="surname2" class="loginInput">
                 <label for="Edad">Fecha de nacimiento</label>
-                <input type="date" name="age">
+                <input type="date" name="age" class="loginInput">
                 <label for="Correo">Correo electrónico</label>
-                <input type="text" name="email">
+                <input type="text" name="email" class="loginInput">
             </div>
-            <input type="submit">
+            <input type="submit" class="loginInput">
         </form>
     </div>
 

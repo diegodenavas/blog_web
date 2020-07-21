@@ -4,7 +4,10 @@
 
             $nick = $_POST["nick"];
             $pass = $_POST["pass"];
-            $recordarDatos = $_POST["recordarDatos"];
+
+            if(isset($_POST["recordarDatos"])){
+                $recordarDatos = $_POST["recordarDatos"];
+            }
 
             $usuarioAux = Usuario::usuarioLogin($nick, $pass);
 
@@ -40,6 +43,7 @@
                 header("Location: /aprendiendoaprogramar.com/");
             }
             else {
-                header("Location: /aprendiendoaprogramar.com/login.php");
+                //header("Location: /aprendiendoaprogramar.com/login.php");
+                echo "false";
             }
 ?>

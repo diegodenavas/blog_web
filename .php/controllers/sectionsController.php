@@ -14,6 +14,18 @@ require(".php/models/administraContenido.php");
             $administraContenido = new AdministraContenido();
 
             $arrayPostsDev = $administraContenido->getPosts("$consulta");
+
+            define("LIMITE_POST", 3); //El numero de post que queremos que haya en cada pagina
+            $numeroDePosts = '';
+            $numeroPaginas = '';
+
+            if($arrayPostsDev == "No se ha ejecutado la consulta correctamente"){
+                echo "En construcción";
+            }else{
+                $numeroDePosts = count($arrayPostsDev);
+                $numeroPaginas = round($numeroDePosts / LIMITE_POST);
+            }
+
             
             if($arrayPostsDev == 0){
                 return;
@@ -25,25 +37,26 @@ require(".php/models/administraContenido.php");
                     echo 
                     "<a href='view_post.php?post=". $arrayPostsDev[$post]->getTitulo() ."' class='anclaArticulo'>
                         <article id=articuloPrincipal>
-                        <img src='imagenes_posts/".$arrayPostsDev[$post]->getUrlImagen()."' alt=''>
-                        <div>
-                        <h2>" . $arrayPostsDev[$post]->getTitulo() . "</h2>
-                        <p>" . $this->recortarTexto($arrayPostsDev[$post]->getContenido(), 500) . "</p>
-                        </div>";
+                            <img src='imagenes_posts/".$arrayPostsDev[$post]->getUrlImagen()."' alt=''>
+                            <div>
+                            <h2>" . $arrayPostsDev[$post]->getTitulo() . "</h2>
+                            <p>" . $this->recortarTexto($arrayPostsDev[$post]->getContenido(), 500) . "</p>
+                            </div>";
 
                     echo 
                     "</article></a>";
+
                 }
                 else{ //Si el post no es el primero no le damos para darle el estilo de los demás post
                     echo 
                     "<a href='view_post.php?post=". $arrayPostsDev[$post]->getTitulo() ."' class='anclaArticulo'>
                     <article class=articulosSecundarios>
-                    <img src='imagenes_posts/".$arrayPostsDev[$post]->getUrlImagen()."' alt=''>
-                    <div>
-                    <h2>" . $arrayPostsDev[$post]->getTitulo() . "</h2>
-                    <p>" . $this->recortarTexto($arrayPostsDev[$post]->getContenido(), 300) . "</p>
-                    
-                    </div>";
+                        <img src='imagenes_posts/".$arrayPostsDev[$post]->getUrlImagen()."' alt=''>
+                        <div>
+                        <h2>" . $arrayPostsDev[$post]->getTitulo() . "</h2>
+                        <p>" . $this->recortarTexto($arrayPostsDev[$post]->getContenido(), 300) . "</p>
+                        
+                        </div>";
 
                     echo 
                     "</article></a>";

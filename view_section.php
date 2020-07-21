@@ -15,6 +15,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src=".js/iconos.js"></script>
     <script src=".js/eliminarDivCookies.js"></script>
+    <script src=".js/menuDesplegable.js"></script>
     
     <?php
         require(".php/controllers/sectionsController.php");
@@ -27,11 +28,12 @@
 
 <body>
     <?php
+        require(".php/scripts/elementosComunes/navMobile.php");
         require(".php/scripts/elementosComunes/nav.php");
         require(".php/scripts/elementosComunes/aceptarCookies.php");
     ?>
 
-    <h1 id="tituloPagina">aprendiendoaprogramar > <?php echo $_GET["section"] ?></h1>
+    <h1 id="tituloPagina" class="tituloPagCompleto">programadiario ></h1><h1 class="tituloPagCompleto"><?php echo $_GET["section"] ?></h1>
 
     
         <section>

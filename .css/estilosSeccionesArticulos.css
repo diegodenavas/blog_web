@@ -84,12 +84,13 @@ article h2{
     background: linear-gradient(90deg, rgba(113,196,21,1) 0%, rgba(3,142,26,1) 100%);
     text-align: center;
     padding: 1.5% 2%;
-    width: 9%;
+    width: 93px;
     margin-top: 5%;
     border-radius: 5px;
     box-shadow: black 1px 1px 3px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
+    font-size: 1.1em;
 }
 
 #pestañaNuevoPostParrafo:hover{
@@ -99,4 +100,49 @@ article h2{
 #pestañaNuevoPost:link, #pestañaNuevoPost:visited, #pestañaNuevoPost:active {
     text-decoration:none;
     color: black;
+}
+
+
+/*DISEÑO RESPONSIVE*/
+
+@media(max-width: 1200px){
+
+    .articulosSecundarios>img, .articulosSecundarios>div{
+        display: block;
+        width: 80%;
+    }
+
+    #articuloPrincipal>div, .articulosSecundarios>div{
+        margin-top: 5%;
+    }
+
+    #articuloPrincipal>img, .articulosSecundarios>img{
+        margin-left: 5%;
+    }
+
+}
+
+@media(max-width: 720px){
+
+    aside{
+        display: none;
+    }
+
+    section{
+        display: block;
+        width: 82%;
+    }
+
+}
+
+@media(max-width: 600px){
+
+    article h2{
+        font-size: 1.3em;
+    }
+
+    article p{
+        font-size: 0.8em;
+    }
+
 }

@@ -15,6 +15,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src=".js/textEditor.js"></script>
     <script src=".js/eliminarDivCookies.js"></script>
+    <script src=".js/menuDesplegable.js"></script>
 
     <?php
         require(".php/models/administraContenido.php");
@@ -31,6 +32,7 @@
 </head>
 <body>
     <?php
+        require(".php/scripts/elementosComunes/navMobile.php");
         require(".php/scripts/elementosComunes/nav.php");
         require(".php/scripts/elementosComunes/aceptarCookies.php");
     ?>
