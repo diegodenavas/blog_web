@@ -41,7 +41,9 @@
             <?php
                 $controlador = new SectionsController();
 
-                $controlador->muestraPost("SELECT * FROM post WHERE seccion ='" . $_GET['section'] . "'");
+                $seccion = $_GET['section'];
+
+                $controlador->muestraPost("SELECT * FROM post WHERE seccion = '$seccion'", $seccion);
 
                 if(isset($_SESSION["rol"])){
                     if($_SESSION["rol"] == 2 || $_SESSION["rol"] == 3 || $_SESSION["rol"] == 4){

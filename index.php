@@ -58,7 +58,7 @@
         <?php
             $controlador = new SectionsController();
 
-            $controlador->muestraPost("SELECT * FROM post");
+            $controlador->muestraPost("SELECT * FROM post where seccion='*'", "*");
 
             if(isset($_SESSION["nick_usuario"])){
                 if($_SESSION["nick_usuario"] == "admin"){
