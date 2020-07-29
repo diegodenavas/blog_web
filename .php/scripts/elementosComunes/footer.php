@@ -4,6 +4,8 @@
         <img src="imagenes/iconos_RRSS/instagram2.png" alt="instagram" class="iconosRRSS">
         <img src="imagenes/iconos_RRSS/facebook2.png" alt="facebook" class="iconosRRSS">
         <img src="imagenes/iconos_RRSS/twitter2.png" alt="twitter" class="iconosRRSS">
+        <br><br>
+        <p>Próximamente</p>
     </div>
 
     <div class="divisionesFooter">
@@ -11,9 +13,13 @@
         pero no intenta enseñar de forma técnica los fundamentos de la programación</p>
     </div>
 
-    <div class="divisionesFooter">
-        <p>Contacto</p>
+    <div class="divisionesFooter" id='infoAdicional'>
+        <ul>
+            <li><a href="infoCookies.php">Politica de Cookies</a></li>
+            <!--<li><a href="infoCookies.php">Privacidad</a></li>-->
+            <li><a href="#">Contacto</a></li>
+        </ul>
     </div>
 
-    <p id="copyrightMessage">Copyright © aprendiendoaprogramar.com</p>
+    <p id="copyrightMessage">Copyright © 2020 aprendiendoaprogramar.com</p>
 </footer>

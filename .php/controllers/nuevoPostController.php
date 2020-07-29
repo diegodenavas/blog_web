@@ -4,27 +4,56 @@
 
     session_start();
 
-    if(validaFotoPrincipal($_FILES["imgPrincipal"]["type"], $_FILES["imgPrincipal"]["size"])){
+    //Validamos y subimos la foto de portada
+    if(validaFoto($_FILES["imgPrincipal"]["type"], $_FILES["imgPrincipal"]["size"]) && validaFoto($_FILES["imgIntoPost"]["type"], $_FILES["imgPrincipal"]["size"])){
 
         $titulo = $_POST["titulo"];
         $contenido = $_POST["contenido"];
         $seccion = $_POST["seccion"];
 
-        //Ruta de la carpeta destino en servidor
-        $imgName = $_FILES["imgPrincipal"]["name"];
-        $imgName_temp = $_FILES["imgPrincipal"]["tmp_name"];
-        $ruta = ".." . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "imagenes_posts" . DIRECTORY_SEPARATOR . $imgName;
+        //Ruta de la carpeta destino en servidor para imgPrincipal
+        $imgPrincipalName = $_FILES["imgPrincipal"]["name"];
+        $imgPrincipalName_temp = $_FILES["imgPrincipal"]["tmp_name"];
+        $rutaImgPrincipal = ".." . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "imagenes_posts" . DIRECTORY_SEPARATOR . $imgPrincipalName;
 
-        $post = new Post($imgName, $titulo, $contenido, $seccion, $_SESSION["nick_usuario"]);
+        //Ruta de la carpeta destino en servidor para imgContenido
+        do{
+            $imgContenidoName = $_FILES["imgIntoPost"]["name"];
+            $imgContenidoName_temp = $_FILES["imgIntoPost"]["tmp_name"];
+            $rutaImgContenido = ".." . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "imagenes_posts" . DIRECTORY_SEPARATOR . $imgContenidoName;
+        }while(!isset($_FILES["imgIntoPost"]["name"]));
 
-        //Movemos la imagen del directorio temporal al directorio escogido
-        if( move_uploaded_file($imgName_temp, $ruta)) {
+        $post = new Post($imgPrincipalName, $titulo, $contenido, $seccion, $_SESSION["nick_usuario"]);
+
+        //Movemos la imagen del directorio temporal de la imgPrincipal al directorio escogido
+        if( move_uploaded_file($imgPrincipalName_temp, $rutaImgPrincipal)) {
             echo "Fichero guardado con éxito";
         }
         else{
             echo "Fichero no guardado";
             return;
         }
+
+        //Movemos la imagen del directorio temporal de la imgContenido al directorio escogido
+        if(isset($imgPrincipalName)){
+
+            var_dump($imgContenidoName_temp);
+            
+
+            
+
+                if( move_uploaded_file($imgContenidoName_temp, $rutaImgContenido)) {
+                    echo "Fichero guardado con éxito";
+                }
+                else{
+                    echo "Fichero no guardado";
+                    return;
+                }
+    
+            
+
+        }
+
 
         $conexionPost = new ConexionBDD();
 
@@ -39,8 +68,10 @@
         echo "Ha habido un error al validar la foto de portada<br>";
     }
 
+    
 
-    function validaFotoPrincipal(String $format, int $size){
+
+    function validaFoto(String $format, int $size){
         $formatosValidos = array("image/.jpg", "image/jpeg", "image/png");
 
         if(in_array($format, $formatosValidos) && $size <= 500000){

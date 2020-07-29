@@ -18,6 +18,7 @@
     <script src=".js/iconos.js"></script>
     <script src=".js/eliminarDivCookies.js"></script>
     <script src=".js/editarPost.js"></script>
+    <script src=".js/textEditor.js"></script>
     <script src=".js/menuDesplegable.js"></script>
 
     <?php
@@ -37,12 +38,11 @@
 
         $tituloPost = str_replace(' ', '', $miPost);
 
-        if(!isset($_COOKIE[$tituloPost])){
+        if(!isset($_COOKIE[$tituloPost]) && !isset($_GET['edit'])){
 
                 $visita = new Visita();
-
                 $visita->addVisita($miPost);
-            
+
                 setcookie($tituloPost, "visitado", time()+14400);
         }
     ?>
@@ -69,10 +69,41 @@
                 </div>";
                 }
             }
+        
+        $contenidoSinBr = str_replace("<br />", "", $post[0]->getContenido());
+
         echo
         "<section>
             <p id='cuerpoPost'>" . $post[0]->getContenido() . "</p>
-        </section>";    
+
+            <form action='.php/controllers/actualizaPost.php' method='POST' enctype='multipart/form-data' id='editorOculto'>
+                <input type='hidden' name='tituloAntiguo'/ value='" . $post[0]->getTitulo() . "'>
+                <label for='imgPrincipal'>Imagen principal</label>
+                <input type='hidden' name='MAX_FILE_SIZE' value='2000000'/>
+                <input type='file' name='imgPrincipal' id='imgPrincipal'>
+                <label for='titulo'>Título</label>
+                <input type='text' name='titulo' value='" . $post[0]->getTitulo() . "'>
+                <label for='contenido'>Contenido</label>
+                <div>
+                    <span id='negrita'>N</span>
+                    <span id='cursiva'>K</span>
+                    <span id='subrayado'>S</span>
+                    <input type='hidden' name='MAX_FILE_SIZE' value='2000000' />
+                    <span><input type='file' name='imgIntoPost' multiple id='imgIntoPost'></span>
+                </div>
+                <textarea name='contenido' id='content'>" . $contenidoSinBr . "</textarea>
+
+                <select name='seccion'>
+                    <option>JavaScript</option>
+                    <option>MySQL</option>
+                    <option>PHP</option>
+                    <option>Java</option>
+                </select>
+                <br>
+                <input type='submit' value='Enviar'>
+            </form>
+
+        </section>"; 
     ?>
 
     <?php

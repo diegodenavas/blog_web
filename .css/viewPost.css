@@ -1,9 +1,20 @@
-#tituloPagina, #optionsAdminContainer{
+#tituloPost{
     display: inline-block;
+    width: 42%;
+    margin-top: 130px;
+}
+
+#editorOculto{
+    display: none;
+}
+
+section img{
+    width: 100%;
 }
 
 #optionsAdminContainer{
-    width: 20%;
+    display: inline-block;
+    width: 21%;
     text-align: right;
 }
 

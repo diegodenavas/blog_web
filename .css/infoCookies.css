@@ -1,0 +1,42 @@
+section{
+    line-height: 150%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.2em;
+}
+
+section ul{
+    margin: 2% 0% 0% 5%;
+}
+
+section ul>li{
+    margin-bottom: 2%;
+}
+
+section b{
+    font-weight: bold;
+}
+
+.tituloCookies{
+    margin: 5% 0% 3% 0%;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+
+/*DISEÑO RESPONSIVE*/
+
+@media(max-width: 900px){
+
+    section{
+        font-size: 1em;
+    }
+
+}
+
+@media(max-width: 350px){
+
+    section{
+        font-size: 0.8em;
+    }
+
+}

@@ -41,6 +41,8 @@ require(".php/models/administraContenido.php");
             }
             for ($post = 0; $post < count($arrayPostsDev); $post++) { 
 
+                
+
                 //Si el post es el primero le damos el id='articuloPrincipal' para darle el estilo del primer post
                 if(!isset($_GET['val']) || $_GET['val'] == 0){
                     if($post == 0){
@@ -50,6 +52,7 @@ require(".php/models/administraContenido.php");
                                 <img src='imagenes_posts/".$arrayPostsDev[$post]->getUrlImagen()."' alt=''>
                                 <div>
                                 <h2>" . $arrayPostsDev[$post]->getTitulo() . "</h2>
+                                <p class='infoPost'>" . $arrayPostsDev[$post]->getFecha() . "</p><p class='infoPost' id='autorPost'>" . $arrayPostsDev[$post]->getUsuario() . "</p>
                                 <p>" . $this->recortarTexto($arrayPostsDev[$post]->getContenido(), 500) . "</p>
                                 </div>";
     
@@ -63,6 +66,7 @@ require(".php/models/administraContenido.php");
                             <img src='imagenes_posts/".$arrayPostsDev[$post]->getUrlImagen()."' alt=''>
                             <div>
                             <h2>" . $arrayPostsDev[$post]->getTitulo() . "</h2>
+                            <p class='infoPost'>" . $arrayPostsDev[$post]->getFecha() . "</p><p class='infoPost' id='autorPost'>" . $arrayPostsDev[$post]->getUsuario() . "</p>
                             <p>" . $this->recortarTexto($arrayPostsDev[$post]->getContenido(), 300) . "</p>
                             
                             </div>";
@@ -78,6 +82,7 @@ require(".php/models/administraContenido.php");
                         <img src='imagenes_posts/".$arrayPostsDev[$post]->getUrlImagen()."' alt=''>
                         <div>
                         <h2>" . $arrayPostsDev[$post]->getTitulo() . "</h2>
+                        <p class='infoPost'>" . $arrayPostsDev[$post]->getFecha() . "</p><p class='infoPost' id='autorPost'>" . $arrayPostsDev[$post]->getUsuario() . "</p>
                         <p>" . $this->recortarTexto($arrayPostsDev[$post]->getContenido(), 300) . "</p>
                         
                         </div>";
@@ -87,14 +92,24 @@ require(".php/models/administraContenido.php");
                 }
             }
 
-            echo "<p>";
+            echo "<p id='contenedorPaginacion'>Páginas: ";
 
             for($i = 1; $i <= $numeroPaginas; $i++){
 
                 $comienzoPostPagina= $LIMITE_POST * $i - $LIMITE_POST;
 
-                if($i == $numeroPaginas) echo "<a href='view_section.php?section=$section&val=$comienzoPostPagina'>" . $i . "</a>";
-                else echo "<a href='view_section.php?section=$section&val=$comienzoPostPagina'>" . $i . ", </a>";
+                if(isset($_GET['section'])){
+
+                    if($i == $numeroPaginas) echo "<a class='numPaginacion' href='view_section.php?section=$section&val=$comienzoPostPagina'>" . $i . "</a>";
+                    else echo "<a class='numPaginacion' href='view_section.php?section=$section&val=$comienzoPostPagina'>" . $i . ", </a>";
+
+                }else{
+
+                    if($i == $numeroPaginas) echo "<a class='numPaginacion' href='index.php?val=$comienzoPostPagina'>" . $i . "</a>";
+                    else echo "<a class='numPaginacion' href='index.php?val=$comienzoPostPagina'>" . $i . ", </a>";
+
+                }
+
             }
 
             echo "</p>";

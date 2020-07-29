@@ -15,6 +15,10 @@ label{
     margin: 2% 0% 10% 0%;
 }
 
+#navCompleto{
+    position: static;
+}
+
 input[name="recordarDatos"], label[for="recordar"]{
     display: inline-block;
     width: 8%;

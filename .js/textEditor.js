@@ -110,4 +110,15 @@ $("document").ready(function(){
     
   });
 
+
+
+  $("#imgIntoPost").change(function(){
+
+    $foto = $("#imgIntoPost").val().split('\\').pop();;
+
+    var select = getSelected();
+    editor.val(select[0] + "<img src='imagenes_posts/" + $foto + "'>" + select[2] + select[1]);
+
+  });
+
 });

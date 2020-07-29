@@ -31,6 +31,9 @@ body{
 }
 
 #navCompleto{
+    position: fixed;
+    top: 0;
+    width: 100%;
     padding: 18px 5%;
     background: linear-gradient(90deg, rgb(41, 19, 107) 23%, rgba(72,27,154,1) 80%, rgba(89,30,215,1) 100%);
     box-shadow: rgba(89,30,215,0.6) 0px 2px 3px;
@@ -52,16 +55,21 @@ body{
 
 .divisionesMenu{
     display: inline-block;
-    width: 49%;
+    width: 70%;
 }
 
 .elementosMenu{
     display: inline-block;
-    margin-right:7%;
+    margin-right:4%;
+}
+
+#opcionMenuUser{
+    width: 30%;
 }
 
 #logoMenu{
     text-align: right;
+    width: 20%;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -79,8 +87,9 @@ menu a:hover{
 /*Estilos del navegador movil*/
 #navMobile{
     display: none;
-    position: absolute;
     position: fixed;
+    top: 0;
+    z-index: 100;
     background: linear-gradient(90deg, rgb(41, 19, 107) 23%, rgba(72,27,154,1) 80%, rgba(89,30,215,1) 100%);
     box-shadow: rgba(89,30,215,0.6) 0px 2px 3px;
     font-weight: bold;
@@ -126,6 +135,23 @@ footer{
     padding: 2%;
     padding-bottom: 1%;
     box-shadow: black 1px 1px 2px 2px;
+}
+
+#infoAdicional{
+    text-align: left;
+}
+
+#infoAdicional ul{
+    margin-left: 40%;
+}
+
+#infoAdicional ul>li{
+    margin-bottom: 5%;
+}
+
+#infoAdicional ul>li>a:link, #infoAdicional ul>li>a:visited, #infoAdicional ul>li>a:active{
+    color: white;
+    text-decoration: none;
 }
 
 .divisionesFooter{
@@ -216,26 +242,6 @@ input[name="denegar"]{
 
 /*DISEÑO RESPONSIVE */
 
-@media(max-width: 1453px){
-
-    .divisionesMenu:first-child{
-        width: 52%;
-    }
-
-    #logoMenu{
-        width: 43%;
-    }
-
-    .elementosMenu{
-        margin-right: 6%;
-    }
-
-    #navCompleto{
-        padding-right: 4%;
-    }
-
-}
-
 @media(max-width: 1343px){
 
     .divisionesMenu:first-child{
@@ -243,7 +249,7 @@ input[name="denegar"]{
     }
 
     #logoMenu{
-        width: 38%;
+        width: 15%;
     }
 
     .elementosMenu{
@@ -354,6 +360,14 @@ input[name="denegar"]{
 
     #aceptarCookies{
         height: 165px;
+    }
+
+}
+
+@media(max-width: 474px){
+
+    #logoMenu{
+        width: 80%;
     }
 
 }

@@ -37,7 +37,7 @@
         require(".php/scripts/elementosComunes/aceptarCookies.php");
     ?>
 
-    <h1 id="tituloPagina">aprendiendoaprogramar > nuevo post</h1>
+    <h1 id="tituloPost">aprendiendoaprogramar > nuevo post</h1>
 
 <div>
     <section>
@@ -53,7 +53,7 @@
                 <span id="cursiva">K</span>
                 <span id="subrayado">S</span>
                 <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
-                <span><input type="file" name="imgIntoPost" id="imgIntoPost"></span>
+                <span><input type="file" name="imgIntoPost" multiple id="imgIntoPost"></span>
             </div>
             <textarea name="contenido" id="content"></textarea>
 

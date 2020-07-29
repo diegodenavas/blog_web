@@ -23,6 +23,12 @@
     <script src=".js/eliminarDivCookies.js"></script>
     <script src=".js/menuDesplegable.js"></script>
 
+    <script>
+        $('document').ready(function(){
+            console.log(window.innerWidth);
+        });
+    </script>
+
     <?php
         require(".php/controllers/sectionsController.php");
         require_once(".php/models/usuario.php");
@@ -42,15 +48,17 @@
     ?>
 
     <header id="cabecera">
-        <h1>Blog de aprendizaje a la programación</h1>
-        <h2>Te cuento mi dia a dia y como estoy aprendiendo desarrollo web de 
-            forma autodidacta en tiempo real</h2>
-        <p>Acompáñame en esta aventura en la que navegaremos por los lenguajes 
-            de programación mas utilizados en la actualidad, nos introduciremos 
-            en las profundidades de las bases de datos relacionales y exploraremos 
-            las inmensidades de los sistemas de control de versiones</p>
-        <p><strong>¡Sumergete en este viaje!</strong></p>
-        <img id="flechaAbajo" src="imagenes/flecha_abajo.png" alt="desplazarse hacia abajo">
+        <div>
+            <h1>Blog de aprendizaje a la programación</h1>
+            <h2>Te cuento mi dia a dia y como estoy aprendiendo desarrollo web de 
+                forma autodidacta en tiempo real</h2>
+            <p>Acompáñame en esta aventura en la que navegaremos por los lenguajes 
+                de programación mas utilizados en la actualidad, nos introduciremos 
+                en las profundidades de las bases de datos relacionales y exploraremos 
+                las inmensidades de los sistemas de control de versiones</p>
+            <p><strong>¡Sumergete en este viaje!</strong></p>
+            <img id="flechaAbajo" src="imagenes/flecha_abajo.png" alt="desplazarse hacia abajo">
+        </div>
     </header>
 
     <section>
@@ -58,7 +66,7 @@
         <?php
             $controlador = new SectionsController();
 
-            $controlador->muestraPost("SELECT * FROM post where seccion='*'", "*");
+            $controlador->muestraPost("SELECT * FROM post ", "*");
 
             if(isset($_SESSION["nick_usuario"])){
                 if($_SESSION["nick_usuario"] == "admin"){
@@ -72,9 +80,7 @@
 
     <?php
         require(".php/scripts/elementosComunes/aside.php");
-    ?>
 
-    <?php
         require(".php/scripts/elementosComunes/footer.php");
     ?>
 </body>

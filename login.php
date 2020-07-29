@@ -42,9 +42,11 @@
                 <input type="password" name="pass" class="loginInput">
                 <?php
                     if(isset($_COOKIE["cookiesAceptadas"])){
-                        echo
-                        "<input type='checkbox' name='recordarDatos'>
-                        <label for='recordar'>Recordar en este equipo</label>";
+                        if($_COOKIE["cookiesAceptadas"] == 'aceptadas'){
+                            echo
+                            "<input type='checkbox' name='recordarDatos'>
+                            <label for='recordar'>Recordar en este equipo</label>";
+                        }
                     }
                 ?>
             </div>
