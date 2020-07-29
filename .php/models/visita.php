@@ -16,10 +16,14 @@
 
             $statement = $conexion->ejecutarConsulta("INSERT INTO visita(id_post, fecha) VALUES((SELECT id FROM post WHERE titulo = ?), curdate())");
 
-            if($statement->execute(array($tituloPost))) $conexion = null;
-            else {
-                $conexion = null;
-                echo "No se ha podido añadir la visita";
+            try {
+                if($statement->execute(array($tituloPost))) $conexion = null;
+                else {
+                    $conexion = null;
+                    echo "No se ha podido añadir la visita";
+                }
+            } catch (PDOException $e) {
+
             }
 
         }

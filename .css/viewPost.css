@@ -8,6 +8,40 @@
     display: none;
 }
 
+#confirmarBorrarPost{
+    display: none;
+    position: absolute;
+    position: fixed;
+    top: 150px;
+    height: 150px;
+    width: 20%;
+    background-color: rgb(216, 193, 255);
+    border: rebeccapurple 2px solid;
+    box-shadow: rebeccapurple 0px 1px 3px;
+    text-align: center;
+    left: 27%;
+}
+
+#confirmarBorrarPost>p{
+    margin-top: 12%;
+}
+
+#confirmarBorrarPost input{
+    width: 80px;
+    height: 30px;
+    border: none;
+}
+
+#confirmarBorrarPostSi{
+    background-color: rgb(26, 243, 26);
+    box-shadow: rgb(7, 184, 7) 0px 1px 2px;
+}
+
+#confirmarBorrarPostNo{
+    background-color: rgb(255, 30, 30);
+    box-shadow: rgb(189, 31, 10) 0px 1px 2px;
+}
+
 section img{
     width: 100%;
 }

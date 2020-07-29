@@ -1,6 +1,10 @@
 <?php
     require("../models/administraContenido.php");
 
+    session_start();
+
+    echo $_SESSION["rol"];
+
     $administraContenido = new AdministraContenido();
 
     $titulo = $_GET["name"];

@@ -29,6 +29,8 @@
                 $_SESSION["email"] = $usuario[0]->getEmail();
                 $_SESSION["rol"] = $usuario[0]->getRol();
 
+                echo $_SESSION["rol"];
+
                 if(isset($recordarDatos)){
                     setcookie("nick", $_SESSION["nick_usuario"], time()+3600, "/");
                     setcookie("name", $_SESSION["name"], time()+3600, "/");
