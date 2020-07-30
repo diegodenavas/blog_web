@@ -29,55 +29,59 @@
                 return;
             }
 
-
-            $conexionPost = new ConexionBDD();
-
-            $statement = $conexionPost->ejecutarConsulta("INSERT INTO post(imagenPrincipal, titulo, contenido, seccion, id_usuario, fecha) VALUES(?, ?, ?, ?, (SELECT id FROM usuario WHERE nick=?), curdate())");
-
-            if($statement->execute(array($post->getUrlImagen(), $post->getTitulo(), $post->getContenido(), $post->getSeccion(), $post->getUsuario() ))){
-                echo "post insertado en la bdd";
-                header("Location: /aprendiendoaprogramar.com/view_post.php?" . "post=".$post->getTitulo());
-            }
-
         }else{
             echo "Ha habido un error al validar la foto de portada<br>";
+            return;
         }
 
     }else{
         echo "Hay que subir una foto de portada";
+        return;
     }
 
 
     //Validamos y subimos las fotos del contenido.
-    if(isset($_FILES["imgIntoPost"]) && isset($_FILES["imgIntoPost"])){
 
-        if(validaFoto($_FILES["imgIntoPost"]["type"], $_FILES["imgPrincipal"]["size"])){
+    for ($i=0; $i < count($_FILES["imgIntoPost"]["name"]); $i++) { 
 
-            //Ruta de la carpeta destino en servidor para imgContenido
-            do{
-                $imgContenidoName = $_FILES["imgIntoPost"]["name"];
-                $imgContenidoName_temp = $_FILES["imgIntoPost"]["tmp_name"];
+        if($_FILES["imgIntoPost"]["size"][$i] == 0) break;
+
+        if(isset($_FILES["imgIntoPost"]["name"][$i])){
+
+            if(validaFoto($_FILES["imgIntoPost"]["type"][$i], $_FILES["imgIntoPost"]["size"][$i])){
+
+                //Ruta de la carpeta destino en servidor para imgContenido
+                $imgContenidoName = $_FILES["imgIntoPost"]["name"][$i];
+                $imgContenidoName_temp = $_FILES["imgIntoPost"]["tmp_name"][$i];
                 $rutaImgContenido = ".." . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "imagenes_posts" . DIRECTORY_SEPARATOR . $imgContenidoName;
-            }while(!isset($_FILES["imgIntoPost"]["name"]));
+                
+                //Movemos la imagen del directorio temporal de la imgContenido al directorio escogido
+                    if( move_uploaded_file($imgContenidoName_temp, $rutaImgContenido)) {
+                        echo "Fichero guardado con éxito";
+                    }
+                    else{
+                        echo "Fichero no guardado";
+                        return;
+                    }
 
-            //Movemos la imagen del directorio temporal de la imgContenido al directorio escogido
-            if(isset($imgPrincipalName)){
-
-                if( move_uploaded_file($imgContenidoName_temp, $rutaImgContenido)) {
-                    echo "Fichero guardado con éxito";
-                }
-                else{
-                    echo "Fichero no guardado";
-                    return;
-                }
-            
+            }else{
+                echo "Ha habido un error al validar una foto del contenido";
+                return;
             }
 
-        }else{
-            echo "Ha habido un error al validar una foto del contenido";
         }
 
     }
+
+    $conexionPost = new ConexionBDD();
+
+    $statement = $conexionPost->ejecutarConsulta("INSERT INTO post(imagenPrincipal, titulo, contenido, seccion, id_usuario, fecha) VALUES(?, ?, ?, ?, (SELECT id FROM usuario WHERE nick=?), curdate())");
+
+    if($statement->execute(array($post->getUrlImagen(), $post->getTitulo(), $post->getContenido(), $post->getSeccion(), $post->getUsuario() ))){
+        echo "post insertado en la bdd";
+    }
+
+    header("Location: /aprendiendoaprogramar.com/view_post.php?" . "post=".$post->getTitulo());
 
     
 

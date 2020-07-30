@@ -109,16 +109,24 @@ $("document").ready(function(){
     }
     
   });
+  
 
+  $("#imgIntoPostSpan").on("change", ".imgIntoPost", function(){
 
-
-  $("#imgIntoPost").change(function(){
-
-    $foto = $("#imgIntoPost").val().split('\\').pop();;
+    $foto = $("#imgIntoPostId").val().split('\\').pop();
 
     var select = getSelected();
+
     editor.val(select[0] + "<img src='imagenes_posts/" + $foto + "'>" + select[2] + select[1]);
 
+    $(".imgIntoPost").css("display", "none");
+
+    $("#imgIntoPostId").removeAttr("id");
+
+    $("#imgIntoPostSpan").append("<input type='file' name='imgIntoPost[]' multiple class='imgIntoPost' id='imgIntoPostId'>");
+
   });
+
+  
 
 });

@@ -33,31 +33,32 @@
         require(".php/scripts/elementosComunes/aceptarCookies.php");
     ?>
 
+    <div>
     <h1 id="tituloPagina" class="tituloPagCompleto">programadiario ></h1><h1 class="tituloPagCompleto"><?php echo $_GET["section"] ?></h1>
-
+    </div>
     
-        <section>
-            
-            <?php
-                $controlador = new SectionsController();
-
-                $seccion = $_GET['section'];
-
-                $controlador->muestraPost("SELECT p.id, p.imagenPrincipal, p.titulo, p.contenido, p.seccion, u.nick, p.fecha FROM post p INNER JOIN usuario u on p.id_usuario = u.id WHERE seccion = '$seccion'", $seccion);
-
-                if(isset($_SESSION["rol"])){
-                    if($_SESSION["rol"] == 2 || $_SESSION["rol"] == 3 || $_SESSION["rol"] == 4){
-                        echo
-                        "<a id=pestañaNuevoPost href='nuevo_post.php'><p id=pestañaNuevoPostParrafo>Nuevo post</p></a>";
-                    }
-                }
-            ?>
-
-        </section>
+    <section>
         
         <?php
-            require(".php/scripts/elementosComunes/aside.php");
+            $controlador = new SectionsController();
+
+            $seccion = $_GET['section'];
+
+            $controlador->muestraPost("SELECT p.id, p.imagenPrincipal, p.titulo, p.contenido, p.seccion, u.nick, p.fecha FROM post p INNER JOIN usuario u on p.id_usuario = u.id WHERE seccion = '$seccion'", $seccion);
+
+            if(isset($_SESSION["rol"])){
+                if($_SESSION["rol"] == 2 || $_SESSION["rol"] == 3 || $_SESSION["rol"] == 4){
+                    echo
+                    "<a id=pestañaNuevoPost href='nuevo_post.php'><p id=pestañaNuevoPostParrafo>Nuevo post</p></a>";
+                }
+            }
         ?>
+
+    </section>
+    
+    <?php
+        require(".php/scripts/elementosComunes/aside.php");
+    ?>
     
 
     <?php

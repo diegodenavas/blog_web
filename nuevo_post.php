@@ -53,7 +53,7 @@
                 <span id="cursiva">K</span>
                 <span id="subrayado">S</span>
                 <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
-                <span><input type="file" name="imgIntoPost" multiple id="imgIntoPost"></span>
+                <span id='imgIntoPostSpan'><input type="file" name="imgIntoPost[]" multiple class="imgIntoPost" id='imgIntoPostId'></span>
             </div>
             <textarea name="contenido" id="content"></textarea>
 
