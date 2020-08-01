@@ -38,6 +38,10 @@
 
         $post = $recibePost->getPosts('SELECT * FROM post WHERE titulo ="'. $miPost .'"');
 
+        if ($post == "No se ha ejecutado la consulta correctamente") {
+            header("Location: /aprendiendoaprogramar.com/index.php");
+        }
+
         $tituloPost = str_replace(' ', '', $miPost);
 
         if(!isset($_COOKIE[$tituloPost]) && !isset($_GET['edit'])){
@@ -102,15 +106,15 @@
                         <span id='cursiva'>K</span>
                         <span id='subrayado'>S</span>
                         <input type='hidden' name='MAX_FILE_SIZE' value='2000000' />
-                        <span><input type='file' name='imgIntoPost' multiple='' id='imgIntoPost'></span>
+                        <span id='imgIntoPostSpan'><input type='file' name='imgIntoPost[]' multiple class='imgIntoPost' id='imgIntoPostId'></span>
                     </div>
                     <textarea name='contenido' id='content'>" . $contenidoSinBr . "</textarea>
 
                     <select name='seccion'>
-                        <option>JavaScript</option>
-                        <option>MySQL</option>
-                        <option>PHP</option>
-                        <option>Java</option>
+                        <option>Blog semanal</option>
+                        <option>Páginas web</option>
+                        <option>Aplicaciones web</option>
+                        <option>Otros proyectos</option>
                     </select>
                     <br>
                     <input type='submit' value='Enviar'>

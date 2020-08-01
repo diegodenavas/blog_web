@@ -19,7 +19,7 @@ u{
 
 
 
-/*Estilos del menu*/
+/*Estilos del navegador*/
 html{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: rgb(238, 238, 238);
@@ -34,11 +34,11 @@ body{
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 18px 5%;
+    padding: 20px 5%;
     background: linear-gradient(90deg, rgb(41, 19, 107) 23%, rgba(72,27,154,1) 80%, rgba(89,30,215,1) 100%);
     box-shadow: rgba(89,30,215,0.6) 0px 2px 3px;
     font-family: sans-serif;
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: bold;
     color: white;
 }
@@ -60,11 +60,17 @@ body{
 
 .elementosMenu{
     display: inline-block;
-    margin-right:4%;
+    margin-right:2%;
+    padding-right: 2%;
+    border-right: rgb(255, 255, 255) 2px solid;
+}
+
+#loginMenu, #opcionMenuUser{
+    border: none;
 }
 
 #opcionMenuUser{
-    width: 30%;
+    width: 20%;
 }
 
 #logoMenu{
@@ -262,19 +268,7 @@ input[name="denegar"]{
 
 }
 
-@media(max-width: 1250px){
-
-    .elementosMenu{
-        margin-right: 4%;
-    }
-
-    #navCompleto{
-        padding-right: 2%;
-    }
-
-}
-
-@media(max-width: 1126px){
+@media(max-width: 1343px){
 
     menu>ul{
         display: none !important;

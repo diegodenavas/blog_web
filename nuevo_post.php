@@ -58,10 +58,10 @@
             <textarea name="contenido" id="content"></textarea>
 
             <select name="seccion">
-                <option>JavaScript</option>
-                <option>MySQL</option>
-                <option>PHP</option>
-                <option>Java</option>
+                <option>Blog semanal</option>
+                <option>Páginas web</option>
+                <option>Aplicaciones web</option>
+                <option>Otros proyectos</option>
             </select>
             <br>
             <input type="submit" value="Enviar">
