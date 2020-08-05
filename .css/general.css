@@ -34,7 +34,7 @@ body{
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 20px 5%;
+    padding: 11px 4%;
     background: linear-gradient(90deg, rgb(41, 19, 107) 23%, rgba(72,27,154,1) 80%, rgba(89,30,215,1) 100%);
     box-shadow: rgba(89,30,215,0.6) 0px 2px 3px;
     font-family: sans-serif;
@@ -43,14 +43,21 @@ body{
     color: white;
 }
 
+menu{
+    padding-right: 4.8%;
+}
+
 #iconoMenu{
-    display: none;
     background-image: url("../imagenes/icono_menu.png");
     background-position: center;
     background-size: contain;
     height: 35px;
     width: 35px;
     cursor: pointer;
+}
+
+#iconoMenu, menu>p{
+    display: inline-block;
 }
 
 .divisionesMenu{
@@ -75,8 +82,10 @@ body{
 
 #logoMenu{
     text-align: right;
-    width: 20%;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 90%;
+    vertical-align: top;
+    margin-top: 7px;
 }
 
 menu a{
@@ -133,7 +142,7 @@ menu a:hover{
 
 
 /*Estilos del footer*/
-footer{
+#footerWeb{
     background-color: rgb(24, 24, 36);
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: white;
@@ -167,7 +176,7 @@ footer{
     margin-bottom: 2%;
 }
 
-footer>div:nth-child(2) {
+#footerWeb>div:nth-child(2) {
     border-right: rgb(185, 185, 185) 1px solid;
     border-left: rgb(185, 185, 185) 1px solid;
     padding: 0% 2% 5% 2%;
@@ -193,178 +202,136 @@ footer>div:nth-child(2) {
     background-color: rgb(224, 221, 16);
 }
 
-/*Aceptar cookies*/
-#aceptarCookies{
-    position: absolute;
-    position: fixed;
-    background-color: black;
+/*Footer mobile*/
+#footerMobile{
+    display: none;
+    background-color: rgb(24, 24, 36);
+    box-shadow: black 1px 1px 2px 2px;
     color: white;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 1.1em;
-    line-height : 120%;
-    padding: 1% 0% 1% 3%;
-    bottom:0px; /*Abajo deje un espacio de 0px*/
-    height:70px; /*alto del div*/
-    z-index:0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 0.75em;
+    text-align: center;
+    padding: 10px;
 }
 
-#aceptarCookies>p, #aceptarCookies>form{
+#infoFooterMobile{
+    margin-bottom: 20px;
+}
+
+.iconosRRSSmobile{
     display: inline-block;
+    width: 25px;
+    margin: 4% 2% 0% 2%;
+    background-color: white;
+    transition: ease-in-out 0.4s;
 }
 
-#aceptarCookies>p{
-    width: 85%;
+.iconosRRSSmobile:hover{
+    background-color: rgb(224, 221, 16);
 }
 
-#aceptarCookies>form{
-    width: 10%;
+#foot-cont-1, #foot-cont-2{
+    display: inline-block;
+    width: 48%;
+    margin-bottom: 10px;
+}
+
+#foot-cont-1>p{
+    font-size: 0.9em;
+}
+
+#foot-cont-2{
+    font-size: 0.9em;
     vertical-align: top;
 }
 
-.botonesCookies{
-    display: inline-block;
-    width: 100px;
+#foot-cont-2>ul>li{
+    margin-bottom: 5px;
+}
+
+#foot-cont-2 ul>li>a:link, #foot-cont-2 ul>li>a:visited, #foot-cont-2 ul>li>a:active{
+    color: white;
+    text-decoration: none;
+}
+
+
+/*Aceptar cookies*/
+#aceptarCookies{
+    width: 100%;
+    background-color: rgba(0,0,0,0.8);
+    position: absolute;
+    position: fixed;
+    bottom: 0;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+#aceptarCookies>p{
+    padding: 15px;
+    padding-bottom: 0%;
+}
+
+#formCookies{
+    text-align: center;
+    padding: 15px 0%;
+}
+
+#aceptar{
+    background-color: rgb(0, 218, 0);
     border: none;
-    border-radius: 3px;
-    cursor: pointer;
+    width: 100px;
+    height: 30px;
+    box-shadow: green 0px 0px 2px 1px;
+    margin-right: 2px;
 }
 
-input[name="aceptar"]{
-    background-color: rgb(43, 228, 19);
-    font-weight: bold;
-    font-size: 1.2em;
-    margin-left: 20%;
-    margin-bottom: 5%;
+#denegar{
+    background-color: red;
+    border: none;
+    width: 100px;
+    height: 30px;
+    box-shadow: rgb(131, 6, 6) 0px 0px 2px 1px;
+    margin-left: 2px;
 }
 
-input[name="denegar"]{
-    background-color: rgb(197, 1, 1);
-    font-weight: bold;
-    font-size: 1.2em;
-    margin-left: 20%;
-    margin-bottom: 5%;
+#aceptarCookies>p>a{
+    color: rgb(154, 147, 253);
 }
 
 
-/*DISEÑO RESPONSIVE */
 
-@media(max-width: 1343px){
-
-    .divisionesMenu:first-child{
-        width: 56%;
-    }
-
-    #logoMenu{
-        width: 15%;
-    }
-
-    .elementosMenu{
-        margin-right: 5%;
-    }
-
-    #navCompleto{
-        padding-right: 3%;
-    }
-
-}
-
-@media(max-width: 1343px){
-
-    menu>ul{
-        display: none !important;
-    }
-
-    menu{
-        padding-right: 4.8%;
-    }
-
-    #navCompleto{
-        padding: 11px 4%;
-    }
-
-    #logoMenu{
-        width: 90%;
-        vertical-align: top;
-        margin-top: 7px;
-    }
-
-    #iconoMenu, menu>p{
-        display: inline-block;
-    }
-
-    #aceptarCookies>p{
-        width: 80%;
-    }
-
-    #aceptarCookies>p{
-        width: 75%;
-    }
+/*DISEÑO RESPONSIVE*/
+@media(max-width: 788px){
 
     #aceptarCookies{
-        height: 80px;
+        font-size: 0.9em;
     }
-
 }
 
-@media(max-width: 753px){
-
-    #aceptarCookies{
-        height: 105px;
-    }
-
-}
-
-@media(max-width: 638px){
-
-    #aceptarCookies{
-        height: 120px;
-    }
-
-}
-
-@media(max-width: 600px){
-
-    footer>div>p{
-        font-size: 0.8em;
-    }
-
-    .iconosRRSS{
-        width: 30px;
-    }
-
-    #copyrightMessage{
-        font-size: 0.6em;
-    }
-
-    #aceptarCookies>p{
-        width: 70%;
-    }
-
-}
-
-@media(max-width: 583px){
-
-    #aceptarCookies{
-        height: 145px;
-    }
-
-}
-
-@media(max-width: 529px){
-
-    #aceptarCookies{
-        height: 165px;
-    }
-
-}
-
-@media(max-width: 474px){
+@media(max-width: 445px){
 
     #logoMenu{
         width: 80%;
+        font-size: 0.9em;
+    }
+
+    #aceptar{
+        width: 70px;
+        height: 25px;
+    }
+    
+    #denegar{
+        width: 70px;
+        height: 25px;
+    }
+
+    #footerWeb{
+        display: none;
+    }
+
+    #footerMobile{
+        display: inherit;
     }
 
 }
-
-
-

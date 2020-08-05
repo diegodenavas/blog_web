@@ -184,3 +184,15 @@ aside>.titulosAside{
     }
 
 }
+
+@media(max-width: 450px){
+
+    .tituloPagCompleto{
+        font-size: 1.4em;
+    }
+
+    #tituloPost{
+        font-size: 1.4em;
+    }
+
+}

@@ -21,7 +21,7 @@
 
         require(".php/scripts/elementosComunes/cookieRecordarSesion.php");
 
-        if (isset($_SESSION["nick_usuario"])) header("Location: /aprendiendoaprogramar.com");
+        if (isset($_SESSION["nick_usuario"])) header("Location: /programaycompila.com");
     ?>
 
 </head>
@@ -33,7 +33,7 @@
     ?>
 
     <div id="contenedorRegistro" >
-        <form action="/aprendiendoaprogramar.com/.php/controllers/registroController.php" method="POST" accept-charset="utf-8" id="registro">
+        <form action="/programaycompila.com/.php/controllers/registroController.php" method="POST" accept-charset="utf-8" id="registro">
             <div id="contenedorTextos">
                 <label for="Usuario">Usuario</label>
                 <input type="text" name="nick" class="loginInput">
@@ -58,6 +58,7 @@
 
     <?php
         require(".php/scripts/elementosComunes/footer.php");
+        require(".php/scripts/elementosComunes/footerMobile.php");
     ?>
 </body>
 </html>

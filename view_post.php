@@ -39,7 +39,7 @@
         $post = $recibePost->getPosts('SELECT * FROM post WHERE titulo ="'. $miPost .'"');
 
         if ($post == "No se ha ejecutado la consulta correctamente") {
-            header("Location: /aprendiendoaprogramar.com/index.php");
+            header("Location: /programaycompila.com/index.php");
         }
 
         $tituloPost = str_replace(' ', '', $miPost);
@@ -73,18 +73,24 @@
             require(".php/scripts/elementosComunes/footer.php");
 
         }else {
-            
-            echo 
-            "<h1 id='tituloPost'>" . $post[0]->getTitulo() . "</h1>";
 
                 if(isset($_SESSION["nick_usuario"])){
+
                     if(($_SESSION["rol"] == 3 || $_SESSION["rol"] == 4) || ($_SESSION["rol"] == 2 && $post[0]->getUsuario() == $_SESSION["id"])){
-                    echo
-                    "<div id='optionsAdminContainer'>
-                    <a href='#'><img src='imagenes/editar.png' class='iconosAdministracionPost' id='editar'></a>
-                    <a href='#'><img src='imagenes/icono_papelera_cerrada.png' class='iconosAdministracionPost' id='iconoPapelera'></a>
-                    </div>";
+                        echo
+                        "<h1 id='tituloPost'>" . $post[0]->getTitulo() . "</h1>
+                        <div id='optionsAdminContainer'>
+                        <a href='#'><img src='imagenes/editar.png' class='iconosAdministracionPost' id='editar'></a>
+                        <a href='#'><img src='imagenes/icono_papelera_cerrada.png' class='iconosAdministracionPost' id='iconoPapelera'></a>
+                        </div>";
+                    }else {
+                        echo
+                        "<h1 id='tituloPost' style='width: 100%'>" . $post[0]->getTitulo() . "</h1>";
                     }
+                    
+                }else{
+                    echo
+                    "<h1 id='tituloPost' style='width: 100%'>" . $post[0]->getTitulo() . "</h1>";
                 }
             
             $contenidoSinBr = str_replace("<br />", "", $post[0]->getContenido());
@@ -124,6 +130,7 @@
 
             require(".php/scripts/elementosComunes/aside.php");
             require(".php/scripts/elementosComunes/footer.php");
+            require(".php/scripts/elementosComunes/footerMobile.php");
 
         }
  

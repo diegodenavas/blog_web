@@ -34,7 +34,7 @@
     ?>
 
     <div>
-    <h1 id="tituloPagina" class="tituloPagCompleto">programadiario ></h1><h1 class="tituloPagCompleto"><?php echo $_GET["section"] ?></h1>
+    <h1 id="tituloPagina" class="tituloPagCompleto">programaYcompila ></h1><h1 class="tituloPagCompleto"><?php echo $_GET["section"] ?></h1>
     </div>
     
     <section>
@@ -63,6 +63,7 @@
 
     <?php
         require(".php/scripts/elementosComunes/footer.php");
+        require(".php/scripts/elementosComunes/footerMobile.php");
     ?>
 </body>
 </html>

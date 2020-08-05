@@ -1,4 +1,4 @@
-<footer>
+<footer id="footerWeb">
     <div class="divisionesFooter">
         <p>Siguenos para más contenido</p>
         <img src="imagenes/iconos_RRSS/instagram2.png" alt="instagram" class="iconosRRSS">
@@ -21,5 +21,5 @@
         </ul>
     </div>
 
-    <p id="copyrightMessage">Copyright © 2020 aprendiendoaprogramar.com</p>
+    <p id="copyrightMessage">Copyright © 2020 programaycompila.com</p>
 </footer>

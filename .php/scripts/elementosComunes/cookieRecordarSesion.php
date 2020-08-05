@@ -1,5 +1,5 @@
 <?php
-    if(isset($_COOKIE["nick"])){
+    if(isset($_COOKIE["nick"]) && !isset($_SESSION["nick_usuario"])){
         if(isset($_COOKIE["nick"])) $_SESSION["nick_usuario"] = $_COOKIE["nick"];
         if(isset($_COOKIE["name"])) $_SESSION["name"] = $_COOKIE["name"];
         if(isset($_COOKIE["surname1"])) $_SESSION["surname1"] = $_COOKIE["surname1"];
@@ -7,5 +7,7 @@
         if(isset($_COOKIE["birthday"])) $_SESSION["birthday"] = $_COOKIE["birthday"];
         if(isset($_COOKIE["registerDate"])) $_SESSION["registerDate"] = $_COOKIE["registerDate"];
         if(isset($_COOKIE["email"])) $_SESSION["email"] = $_COOKIE["email"];
+        if(isset($_COOKIE["rol"])) $_SESSION["rol"] = $_COOKIE["rol"];
+        
     }
 ?>

@@ -12,6 +12,6 @@
 
         session_destroy();
 
-        header("Location: /aprendiendoaprogramar.com/login.php");
+        header("Location: /login.php");
     }
 ?>

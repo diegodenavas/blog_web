@@ -1,7 +1,7 @@
 <?php
-    require_once("ConexionBDD.php");
-    require("Post.php");
-    require_once("Usuario.php");
+    require_once("conexionBDD.php");
+    require("post.php");
+    require_once("usuario.php");
 
     class AdministraContenido{
 

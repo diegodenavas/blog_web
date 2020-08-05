@@ -56,7 +56,7 @@ article h2{
 }
 
 #articuloPrincipal>img{
-    width: 90%;
+    width: 95%;
     margin: auto;
 }
 
@@ -150,9 +150,7 @@ article h2{
         margin-top: 5%;
     }
 
-    #articuloPrincipal>img, .articulosSecundarios>img{
-        margin-left: 5%;
-    }
+    
 
 }
 
@@ -185,6 +183,10 @@ article h2{
 
     article p{
         font-size: 0.8em;
+    }
+
+    .infoPost{
+        font-size: 1em;
     }
 
 }

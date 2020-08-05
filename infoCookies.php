@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,7 +41,7 @@
         require(".php/scripts/elementosComunes/aceptarCookies.php");
     ?>
 
-    <h1 id="tituloPagina" class="tituloPagCompleto">programadiario > Politica de Cookies</h1>
+    <h1 id="tituloPagina" class="tituloPagCompleto">Politica de Cookies</h1>
 
     <section>
         <p>En cumplimiento con lo dispuesto en el artículo 22.2 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de 
@@ -96,8 +96,8 @@
 
     <?php
         require(".php/scripts/elementosComunes/aside.php");
-
         require(".php/scripts/elementosComunes/footer.php");
+        require(".php/scripts/elementosComunes/footerMobile.php");
     ?>
 </body>
 </html>

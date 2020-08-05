@@ -25,7 +25,7 @@
         require(".php/scripts/elementosComunes/cookieRecordarSesion.php");
         
         if(!isset($_SESSION["rol"]) || (!$_SESSION["rol"] == 2 || !$_SESSION["rol"] == 3)){
-            header("Location: /aprendiendoaprogramar.com");
+            header("Location: /programaycompila.com");
         }
     ?>
     
@@ -37,7 +37,7 @@
         require(".php/scripts/elementosComunes/aceptarCookies.php");
     ?>
 
-    <h1 id="tituloPost">aprendiendoaprogramar > nuevo post</h1>
+    <h1 id="tituloPost">programaYcompila > nuevo post</h1>
 
 <div>
     <section>
@@ -75,6 +75,7 @@
     
     <?php
         require(".php/scripts/elementosComunes/footer.php");
+        require(".php/scripts/elementosComunes/footerMobile.php");
     ?>
 </body>
 </html>

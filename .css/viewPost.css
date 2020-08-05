@@ -69,3 +69,27 @@ section img{
 #editar{
     margin-right: 1.5%;  
 }
+
+
+
+/*DISEÑO RESPONSIVE*/
+
+@media(max-width: 720px){
+
+    #tituloPost{
+        width: 65%;
+    }
+
+    .iconosAdministracionPost{
+        width: 22px;
+    }
+
+}
+
+@media(max-width: 450px){
+
+    section{
+        font-size: 1.1em;
+    }
+
+}

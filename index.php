@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>aprendiendoaprogramar.com</title>
+    <title>programaYcompila.com</title>
 
     <!--Cargamos less
     <link rel="stylesheet/less" type="text/css" href="styles.less">
@@ -66,7 +66,7 @@
         <?php
             $controlador = new SectionsController();
 
-            $controlador->muestraPost("SELECT * FROM post ", "*");
+            $controlador->muestraPost("SELECT p.id, p.imagenPrincipal, p.titulo, p.contenido, p.seccion, u.nick, p.fecha FROM post p INNER JOIN usuario u on p.id_usuario = u.id ", "*");
 
             if(isset($_SESSION["nick_usuario"])){
                 if($_SESSION["nick_usuario"] == "admin"){
@@ -80,8 +80,8 @@
 
     <?php
         require(".php/scripts/elementosComunes/aside.php");
-
         require(".php/scripts/elementosComunes/footer.php");
+        require(".php/scripts/elementosComunes/footerMobile.php");
     ?>
 </body>
 </html>

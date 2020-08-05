@@ -42,7 +42,7 @@
                     setcookie("rol", $_SESSION["rol"], time()+3600, "/");
                 }
 
-                header("Location: /aprendiendoaprogramar.com/");
+                header("Location: /programaycompila.com/");
             }
             else {
                 //header("Location: /aprendiendoaprogramar.com/login.php");
