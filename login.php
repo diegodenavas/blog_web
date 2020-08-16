@@ -1,9 +1,17 @@
+<?php
+session_start();
+
+if (isset($_SESSION["nick_usuario"])) header("Location: /");
+
+require(".php/scripts/elementosComunes/cookieRecordarSesion.php");
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <link rel="icon" type="image/png" href="/imagenes/favicom-350X350.png">
+    <title>programaYcompila.es</title>
 
     <!--Cargamos las hojas de estilo de esta página-->
     <link rel="stylesheet" href=".css/plantillaReset.css">
@@ -16,12 +24,9 @@
     <script src=".js/login.js"></script>
     <script src=".js/menuDesplegable.js"></script>
 
+
     <?php
-        session_start();
-
-        require(".php/scripts/elementosComunes/cookieRecordarSesion.php");
-
-        if (isset($_SESSION["nick_usuario"])) header("Location: /programaycompila.com");
+        if (isset($_SESSION["nick_usuario"])) header("Location: /");
     ?>
 
 </head>
@@ -34,12 +39,12 @@
     ?>
 
     <div id="contenedorLogin" class="contenedorFormulario">
-        <form action="/programaycompila.com/.php/controllers/loginController.php" method="POST" id="login">
+        <form action=".php/controllers/loginController.php" method="POST" id="login" style='display: block'>
             <div id="contenedorTextos">
                 <label for="Usuario">Usuario</label>
-                <input type="text" name="nick" class="loginInput">
+                <input type="text" name="nick" class="loginInput" id="user">
                 <label for="Contraseña">Contraseña</label>
-                <input type="password" name="pass" class="loginInput">
+                <input type="password" name="pass" class="loginInput" id="pass">
                 <?php
                     if(isset($_COOKIE["cookiesAceptadas"])){
                         if($_COOKIE["cookiesAceptadas"] == 'aceptadas'){
@@ -50,8 +55,9 @@
                     }
                 ?>
             </div>
-            <input type="submit">
-            <p id="mensajeRegistro">¿Aun no tienes cuenta? <br><br><a href="registro.php">Registrate</a><p>
+            <input type="button" id="botonEnviar" value="Enviar">
+            <!--<p id="mensajeRegistro">¿Aun no tienes cuenta? <br><br><a href="registro.php">Registrate</a><p>-->
+            <p id='msgError' style='font-family: serif; font-size:0.8em; margin-top: 10px; color:red; width: 100%' >El usuario o la contraseña son incorrectos</p>
         </form>
     </div>
 

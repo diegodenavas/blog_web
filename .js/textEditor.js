@@ -17,6 +17,8 @@ $("document").ready(function(){
   let negritaActivado = 0;
   let cursivaActivado = 0;
   let subrayadoActivado = 0;
+  let fuenteGrandeActivado = 0;
+  let fuenteMuyGrandeActivado = 0;
 
   $("#negrita").click(function(){
 
@@ -128,5 +130,65 @@ $("document").ready(function(){
   });
 
   
+  $("#fuenteGrande").click(function(){
+
+    var u     = editor.val();
+    var start = editor.get(0).selectionStart;
+    var end   = editor.get(0).selectionEnd;
+    subs = u.substring(start, end);
+
+    if (subs.length > 0){
+
+      var select = getSelected();
+      editor.val(select[0]+"<span class='fuentesGrandes' style='font-size: 1.2em'>" + select[2] + "</span>" + select[1]);
+
+    }else{
+
+      if(fuenteGrandeActivado == 0){
+        $("#fuenteGrande").css("background-color", "rgb(207, 207, 207)");
+        var select = getSelected();
+        editor.val(select[0] + "<span class='fuentesGrandes' style='font-size: 1.2em'>" + select[2] + select[1]);
+        fuenteGrandeActivado = 1;
+      }else{
+        $("#fuenteGrande").css("background-color", "rgb(247, 247, 247)");
+        var select = getSelected();
+        editor.val(select[0] + '</span>' + select[2] + select[1]);
+        fuenteGrandeActivado = 0;   
+      }  
+
+    } 
+
+  });
+
+
+  $("#fuenteMuyGrande").click(function(){
+
+    var u     = editor.val();
+    var start = editor.get(0).selectionStart;
+    var end   = editor.get(0).selectionEnd;
+    subs = u.substring(start, end);
+
+    if (subs.length > 0){
+
+      var select = getSelected();
+      editor.val(select[0]+"<span class='fuentesMuyGrandes' style='font-size: 1.4em'>" + select[2] + "</span>" + select[1]);
+
+    }else{
+
+      if(fuenteMuyGrandeActivado == 0){
+        $("#fuenteMuyGrande").css("background-color", "rgb(207, 207, 207)");
+        var select = getSelected();
+        editor.val(select[0] + "<span class='fuentesMuyGrandes' style='font-size: 1.4em>" + select[2] + select[1]);
+        fuenteMuyGrandeActivado = 1;
+      }else{
+        $("#fuenteMuyGrande").css("background-color", "rgb(247, 247, 247)");
+        var select = getSelected();
+        editor.val(select[0] + '</span>' + select[2] + select[1]);
+        fuenteMuyGrandeActivado = 0;   
+      }  
+
+    } 
+
+  });
 
 });

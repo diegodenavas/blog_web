@@ -48,10 +48,13 @@
             <label for="titulo">Título</label>
             <input type="text" name="titulo">
             <label for="contenido">Contenido</label>
-            <div>
-                <span id="negrita">N</span>
-                <span id="cursiva">K</span>
-                <span id="subrayado">S</span>
+            <div id="optionText-container">
+                <span id="negrita" title="Negrita">N</span>
+                <span id="cursiva" title="Cursiva">K</span>
+                <span id="subrayado" title="Subrayado">S</span>
+                <span id="fuenteGrande" title="Fuente grande">F:G</span>
+                <span id="fuenteMuyGrande" title="Fuente muy grande">F:MG</span>
+
                 <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
                 <span id='imgIntoPostSpan'><input type="file" name="imgIntoPost[]" multiple class="imgIntoPost" id='imgIntoPostId'></span>
             </div>

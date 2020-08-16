@@ -85,12 +85,12 @@
                         </div>";
                     }else {
                         echo
-                        "<h1 id='tituloPost' style='width: 100%'>" . $post[0]->getTitulo() . "</h1>";
+                        "<h1 id='tituloPost' style='width: 80%'>" . $post[0]->getTitulo() . "</h1>";
                     }
                     
                 }else{
                     echo
-                    "<h1 id='tituloPost' style='width: 100%'>" . $post[0]->getTitulo() . "</h1>";
+                    "<h1 id='tituloPost' style='width: 80%'>" . $post[0]->getTitulo() . "</h1>";
                 }
             
             $contenidoSinBr = str_replace("<br />", "", $post[0]->getContenido());
@@ -107,10 +107,12 @@
                     <label for='titulo'>Título</label>
                     <input type='text' name='titulo' value='" . $post[0]->getTitulo() . "'>
                     <label for='contenido'>Contenido</label>
-                    <div>
+                    <div id='optionText-container'>
                         <span id='negrita'>N</span>
                         <span id='cursiva'>K</span>
                         <span id='subrayado'>S</span>
+                        <span id='fuenteGrande' title='Fuente grande'>F:G</span>
+                        <span id='fuenteMuyGrande' title='Fuente muy grande'>F:MG</span>
                         <input type='hidden' name='MAX_FILE_SIZE' value='2000000' />
                         <span id='imgIntoPostSpan'><input type='file' name='imgIntoPost[]' multiple class='imgIntoPost' id='imgIntoPostId'></span>
                     </div>

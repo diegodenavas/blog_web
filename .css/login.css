@@ -15,10 +15,6 @@ label{
     margin: 2% 0% 10% 0%;
 }
 
-#navCompleto{
-    position: static;
-}
-
 input[name="recordarDatos"], label[for="recordar"]{
     display: inline-block;
     width: 8%;
@@ -32,7 +28,7 @@ label[for="recordar"]{
     font-size: 0.8em;
 }
 
-input[type="submit"]{
+#botonEnviar{
     margin: auto;
     margin-top: 20%;
     width: 50%;
@@ -46,7 +42,7 @@ input[type="submit"]{
     transition: ease-in-out 0.1s 0s;
 }
 
-input[type="submit"]:hover{
+#botonEnviar:hover{
     background-color: rgb(190, 159, 248);
     border-color: rgba(72,27,154,1);
     width: 52%;
@@ -54,7 +50,7 @@ input[type="submit"]:hover{
 }
 
 #contenedorLogin{
-    margin: 10% auto 10% auto;
+    margin: 250px auto 300px auto;
     display: flex;
     align-items: center;
     width: 370px;
@@ -68,7 +64,7 @@ input[type="submit"]:hover{
 }
 
 #contenedorRegistro{
-    margin: 6% auto 10% auto;
+    margin: 200px auto 200px auto;
     display: flex;
     align-items: center;
     width: 370px;
@@ -82,6 +78,10 @@ input[type="submit"]:hover{
     width: 100%;
     font-size: 0.8em;
     margin-top: 35%;
+}
+
+#msgError{
+    display: none;
 }
 
 

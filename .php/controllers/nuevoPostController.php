@@ -81,7 +81,7 @@
         echo "post insertado en la bdd";
     }
 
-    header("Location: /aprendiendoaprogramar.com/view_post.php?" . "post=".$post->getTitulo());
+    header("Location: /programaycompila.com/view_post.php?" . "post=".$post->getTitulo());
 
     
 

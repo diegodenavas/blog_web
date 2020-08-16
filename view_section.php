@@ -44,7 +44,7 @@
 
             $seccion = $_GET['section'];
 
-            $controlador->muestraPost("SELECT p.id, p.imagenPrincipal, p.titulo, p.contenido, p.seccion, u.nick, p.fecha FROM post p INNER JOIN usuario u on p.id_usuario = u.id WHERE seccion = '$seccion'", $seccion);
+            $controlador->muestraPost("SELECT p.id, p.imagenPrincipal, p.titulo, p.resumen, p.contenido, p.seccion, u.nick, p.fecha FROM post p INNER JOIN usuario u on p.id_usuario = u.id WHERE seccion = '$seccion'", $seccion);
 
             if(isset($_SESSION["rol"])){
                 if($_SESSION["rol"] == 2 || $_SESSION["rol"] == 3 || $_SESSION["rol"] == 4){

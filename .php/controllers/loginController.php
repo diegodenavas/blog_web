@@ -11,7 +11,7 @@
 
             $usuarioAux = Usuario::usuarioLogin($nick, $pass);
 
-            if($usuarioAux->validaUsuario()){
+            if($usuarioAux->validaUsuario($nick, $pass)){
 
                 $administraContenido = new AdministraContenido();
 
@@ -29,8 +29,6 @@
                 $_SESSION["email"] = $usuario[0]->getEmail();
                 $_SESSION["rol"] = $usuario[0]->getRol();
 
-                echo $_SESSION["rol"];
-
                 if(isset($recordarDatos)){
                     setcookie("nick", $_SESSION["nick_usuario"], time()+3600, "/");
                     setcookie("name", $_SESSION["name"], time()+3600, "/");
@@ -41,11 +39,9 @@
                     setcookie("email", $_SESSION["email"], time()+3600, "/");
                     setcookie("rol", $_SESSION["rol"], time()+3600, "/");
                 }
-
-                header("Location: /programaycompila.com/");
+                echo "El usuario o la contraseña son correctos";
             }
             else {
-                //header("Location: /aprendiendoaprogramar.com/login.php");
-                echo "false";
+                echo "El usuario o la contraseña son incorrectos";
             }
 ?>

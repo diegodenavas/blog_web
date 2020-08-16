@@ -63,7 +63,7 @@
 
         if($statement->execute(array($imgName, $titulo, $contenido, $seccion, $tituloAntiguo ))){
             echo "post insertado en la bdd";
-            header("Location: /aprendiendoaprogramar.com/view_post.php?" . "post=".$titulo."&edit='1'"); //Ponemos el edit=1 para que no añada visita cuando entre al post de nuevo.
+            header("Location: /programaycompila.com/view_post.php?" . "post=".$titulo."&edit='1'"); //Ponemos el edit=1 para que no añada visita cuando entre al post de nuevo.
         }
         else {
             echo "No se ha podido actualizar el post";
@@ -73,7 +73,7 @@
 
         if($statement->execute(array($titulo, $contenido, $seccion, $tituloAntiguo ))){
             echo "post insertado en la bdd";
-            header("Location: /aprendiendoaprogramar.com/view_post.php?" . "post=".$titulo."&edit='1'");
+            header("Location: /programaycompila.com/view_post.php?" . "post=".$titulo."&edit='1'");
         }
         else {
             echo "No se ha podido actualizar el post";

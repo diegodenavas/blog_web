@@ -18,9 +18,9 @@
 
             while ($fila = $statement->fetch(PDO::FETCH_BOTH)) {
 
-                $arrayPosts[$cont] = new Post($fila[1], $fila[2], nl2br($fila[3]), $fila[4], $fila[5]);
+                $arrayPosts[$cont] = new Post($fila[1], $fila[2], nl2br($fila[3]), nl2br($fila[4]), $fila[5], $fila[6]);
 
-                $arrayPosts[$cont]->setFecha($fila[6]);
+                $arrayPosts[$cont]->setFecha($fila[7]);
 
                 $cont++;
             }

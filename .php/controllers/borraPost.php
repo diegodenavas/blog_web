@@ -13,5 +13,5 @@
 
     $administraContenido->borraPost($titulo);
 
-    header("Location: /aprendiendoaprogramar.com/view_section.php?section=" . $post[0]->getSeccion());
+    header("Location: /programaycompila.com/view_section.php?section=" . $post[0]->getSeccion());
 ?>

@@ -1,26 +1,39 @@
 $("document").ready(function(){
 
-    $("#login").submit(function(){
+    $('#botonEnviar').click(function(){
 
-        var datosForm = {nick:$("#nick").val(),
-                         pass:$("#pass").val()
+        var data = $("#login").serialize();
+        
+        if($.trim(user).length > 0 && $.trim(pass).length > 0){
+
+            $.ajax({
+                url:  ".php/controllers/loginController.php",
+                method: "POST",
+                data: data,
+                cache: "false",
+                beforeSend: function(){
+                    $("#botonEnviar").val("...");
+                },
+                success: function(msg){
+                    $("#botonEnviar").val("Enviar");
+
+                    if(msg=="El usuario o la contraseña son correctos"){
+                        $(location).attr("href", "index.php")
+                    }else{
+                        $("#msgError").css("display", "inherit");
+
+                        for (let i = 0; i < 4; i++) {
+                            $("#msgError").animate({marginLeft:"4px"}, 50);
+                            $("#msgError").animate({marginLeft:"0px"}, 50); 
+                        }
+                    }
+
+                }
+
+            });
+
         }
 
-        console.log(datosForm);
-
-        $.post("/.php/controllers/loginController", datosForm, respuesta);
-
-        
     });
-
-
-    function respuesta(resultado){
-        
-        if(resultado == "false"){
-
-            $("#nick").after("<p id='mensajeUsuarioExistente'>Usuario o contraseña incorrectos</p>");
-        }
-
-    }
 
 });

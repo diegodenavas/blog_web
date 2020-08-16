@@ -19,17 +19,17 @@ textarea{
 
 input[type="submit"]{
     margin-top: 3%;
-    width: 10%;
+    width: 90px;
     height: 2em;
 }
 
 select{
-    width: 15%;
+    width: 150px;
     height: 2em;
     margin-top: 2%;
 }
 
-span{
+#optionText-container>span{
     background-color: rgb(247, 247, 247);
     border: black 1px solid;
     padding: 0.1% 0.5%;
@@ -38,7 +38,7 @@ span{
     font-weight: bold;
 }
 
-span:hover{
+#optionText-container>span:hover{
     background-color: rgb(207, 207, 207);
     cursor: pointer;
 }

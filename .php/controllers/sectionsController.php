@@ -53,7 +53,7 @@ require(".php/models/administraContenido.php");
                                 <div>
                                 <h2>" . $arrayPostsDev[$post]->getTitulo() . "</h2>
                                 <p class='infoPost'>" . $arrayPostsDev[$post]->getFecha() . "</p><p class='infoPost' id='autorPost'>" . $arrayPostsDev[$post]->getUsuario() . "</p>
-                                <p>" . $this->recortarTexto($arrayPostsDev[$post]->getContenido(), 500) . "</p>
+                                <p>" . $this->recortarTexto($arrayPostsDev[$post]->getResumen(), 500) . "</p>
                                 </div>";
     
                         echo 
@@ -67,7 +67,7 @@ require(".php/models/administraContenido.php");
                             <div>
                             <h2>" . $arrayPostsDev[$post]->getTitulo() . "</h2>
                             <p class='infoPost'>" . $arrayPostsDev[$post]->getFecha() . "</p><p class='infoPost' id='autorPost'>" . $arrayPostsDev[$post]->getUsuario() . "</p>
-                            <p>" . $this->recortarTexto($arrayPostsDev[$post]->getContenido(), 300) . "</p>
+                            <p>" . $this->recortarTexto($arrayPostsDev[$post]->getResumen(), 300) . "</p>
                             
                             </div>";
     
@@ -83,7 +83,7 @@ require(".php/models/administraContenido.php");
                         <div>
                         <h2>" . $arrayPostsDev[$post]->getTitulo() . "</h2>
                         <p class='infoPost'>" . $arrayPostsDev[$post]->getFecha() . "</p><p class='infoPost' id='autorPost'>" . $arrayPostsDev[$post]->getUsuario() . "</p>
-                        <p>" . $this->recortarTexto($arrayPostsDev[$post]->getContenido(), 300) . "</p>
+                        <p>" . $this->recortarTexto($arrayPostsDev[$post]->getResumen(), 300) . "</p>
                         
                         </div>";
 

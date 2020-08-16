@@ -5,14 +5,16 @@
         
         private $urlImagen;
         private $titulo;
+        private $resumen;
         private $contenido;
         private $seccion;
         private $usuario;
         private $fecha;
 
-        public function __construct(String $urlImagen, String $titulo, String $contenido, String $seccion, String $usuario){
+        public function __construct(String $urlImagen, String $titulo, String $resumen, String $contenido, String $seccion, String $usuario){
             $this->urlImagen=$urlImagen;
             $this->titulo=$titulo;
+            $this->resumen=$resumen;
             $this->contenido=$contenido;
             $this->seccion=$seccion;
             $this->usuario=$usuario;
@@ -38,6 +40,17 @@
 
         public function setTitulo(String $titulo){
             $this->titulo=$titulo;
+        }
+
+
+        public function getResumen()
+        {
+                return $this->resumen;
+        }
+
+        public function setResumen($resumen)
+        {
+                $this->resumen = $resumen;
         }
 
 

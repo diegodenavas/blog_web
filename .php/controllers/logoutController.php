@@ -12,6 +12,6 @@
 
         session_destroy();
 
-        header("Location: /login.php");
+        header("Location: /programaycompila.com/login.php");
     }
 ?>

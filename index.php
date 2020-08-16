@@ -66,7 +66,7 @@
         <?php
             $controlador = new SectionsController();
 
-            $controlador->muestraPost("SELECT p.id, p.imagenPrincipal, p.titulo, p.contenido, p.seccion, u.nick, p.fecha FROM post p INNER JOIN usuario u on p.id_usuario = u.id ", "*");
+            $controlador->muestraPost("SELECT p.id, p.imagenPrincipal, p.titulo, p.resumen, p.contenido, p.seccion, u.nick, p.fecha FROM post p INNER JOIN usuario u on p.id_usuario = u.id ", "*");
 
             if(isset($_SESSION["nick_usuario"])){
                 if($_SESSION["nick_usuario"] == "admin"){
