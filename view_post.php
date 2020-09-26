@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 
     <!--Cargamos nuestras hojas de estilo-->
     <link rel='stylesheet' href='.css/plantillaReset.css'>
@@ -52,6 +49,10 @@
                 setcookie($tituloPost, "visitado", time()+14400);
         }
     ?>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $post[0]->getTitulo() ?></title>
     
 </head>
 
@@ -62,7 +63,6 @@
         require(".php/scripts/elementosComunes/aceptarCookies.php");
         require(".php/scripts/confirmarBorrarPost.php");
     ?>
-
 
     <?php
 

@@ -10,6 +10,7 @@
         if(validaFoto($_FILES["imgPrincipal"]["type"], $_FILES["imgPrincipal"]["size"])){
 
             $titulo = $_POST["titulo"];
+            $descripcion = $_POST["descripcion"];
             $contenido = $_POST["contenido"];
             $seccion = $_POST["seccion"];
 
@@ -18,7 +19,7 @@
             $imgPrincipalName_temp = $_FILES["imgPrincipal"]["tmp_name"];
             $rutaImgPrincipal = ".." . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "imagenes_posts" . DIRECTORY_SEPARATOR . $imgPrincipalName;
 
-            $post = new Post($imgPrincipalName, $titulo, $contenido, $seccion, $_SESSION["nick_usuario"]);
+            $post = new Post($imgPrincipalName, $titulo, $descripcion, $contenido, $seccion, $_SESSION["nick_usuario"]);
 
             //Movemos la imagen del directorio temporal de la imgPrincipal al directorio escogido
             if( move_uploaded_file($imgPrincipalName_temp, $rutaImgPrincipal)) {
@@ -75,9 +76,9 @@
 
     $conexionPost = new ConexionBDD();
 
-    $statement = $conexionPost->ejecutarConsulta("INSERT INTO post(imagenPrincipal, titulo, contenido, seccion, id_usuario, fecha) VALUES(?, ?, ?, ?, (SELECT id FROM usuario WHERE nick=?), curdate())");
+    $statement = $conexionPost->ejecutarConsulta("INSERT INTO post(imagenPrincipal, titulo, resumen, contenido, seccion, id_usuario, fecha) VALUES(?, ?, ?, ?, ?, (SELECT id FROM usuario WHERE nick=?), curdate())");
 
-    if($statement->execute(array($post->getUrlImagen(), $post->getTitulo(), $post->getContenido(), $post->getSeccion(), $post->getUsuario() ))){
+    if($statement->execute(array($post->getUrlImagen(), $post->getTitulo(), $post->getResumen(), $post->getContenido(), $post->getSeccion(), $post->getUsuario() ))){
         echo "post insertado en la bdd";
     }
 
