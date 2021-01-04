@@ -47,6 +47,8 @@
             <input type="file" name="imgPrincipal" id="imgPrincipal">
             <label for="titulo">Título</label>
             <input type="text" name="titulo">
+            <label for="descripcion">Descripción</label>
+            <textarea name="descripcion" id="description"></textarea>
             <label for="contenido">Contenido</label>
             <div id="optionText-container">
                 <span id="negrita" title="Negrita">N</span>

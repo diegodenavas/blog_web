@@ -12,9 +12,15 @@ input[type="text"]{
     margin-bottom: 2%;
 }
 
-textarea{
+#content{
     width: 97%;
     height: 25em;
+}
+
+#description{
+    width: 97%;
+    height: 5em;
+    margin-bottom: 2%;
 }
 
 input[type="submit"]{
