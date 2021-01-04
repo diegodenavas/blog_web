@@ -23,8 +23,8 @@ $("document").ready(function(){
                         $("#msgError").css("display", "inherit");
 
                         for (let i = 0; i < 4; i++) {
-                            $("#msgError").animate({marginLeft:"4px"}, 50);
-                            $("#msgError").animate({marginLeft:"0px"}, 50); 
+                            $("#msgError").animate({marginLeft:"4px"}, 30);
+                            $("#msgError").animate({marginLeft:"0px"}, 30); 
                         }
                     }
 

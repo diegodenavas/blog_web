@@ -6,21 +6,21 @@
     <title>Document</title>
 
     <!--Cargamos nuestras hojas de estilo-->
-    <link rel='stylesheet' href='.css/plantillaReset.css'>
-    <link rel='stylesheet' href='.css/general.css'>
-    <link rel='stylesheet' href='.css/estilosPaginasGeneral.css'>
-    <link rel='stylesheet' href='.css/estilosSeccionesArticulos.css'>
-    <link rel='stylesheet' href='.css/viewPost.css'>
-    <link rel="stylesheet" href=".css/nuevoPost.css">
+    <link rel='stylesheet' href='/programaycompila.com/.css/plantillaReset.css'>
+    <link rel='stylesheet' href='/programaycompila.com/.css/general.css'>
+    <link rel='stylesheet' href='/programaycompila.com/.css/estilosPaginasGeneral.css'>
+    <link rel='stylesheet' href='/programaycompila.com/.css/estilosSeccionesArticulos.css'>
+    <link rel='stylesheet' href='/programaycompila.com/.css/viewPost.css'>
+    <link rel="stylesheet" href="/programaycompila.com/.css/nuevoPost.css">
 
     <!--Cargamos jquery y nuestros scripts-->
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
-    <script src=".js/iconos.js"></script>
-    <script src=".js/eliminarDivCookies.js"></script>
-    <script src=".js/editarPost.js"></script>
-    <script src=".js/textEditor.js"></script>
-    <script src=".js/menuDesplegable.js"></script>
-    <script src=".js/borrarPost.js"></script>
+    <script src="/programaycompila.com/.js/iconos.js"></script>
+    <script src="/programaycompila.com/.js/eliminarDivCookies.js"></script>
+    <script src="/programaycompila.com/.js/editarPost.js"></script>
+    <script src="/programaycompila.com/.js/textEditor.js"></script>
+    <script src="/programaycompila.com/.js/menuDesplegable.js"></script>
+    <script src="/programaycompila.com/.js/borrarPost.js"></script>
 
     <?php
         require('.php/models/administraContenido.php');
@@ -36,7 +36,7 @@
 
         $recibePost = new AdministraContenido();
 
-        $post = $recibePost->getPosts('SELECT * FROM post WHERE titulo ="'. $miPost .'"');
+        $post = $recibePost->getPosts('SELECT * FROM post WHERE titulo ="'. str_replace("-", " ", $miPost) .'"');
 
         if ($post == "No se ha ejecutado la consulta correctamente") {
             header("Location: /programaycompila.com/index.php");

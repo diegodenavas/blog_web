@@ -16,32 +16,32 @@
             if(isset($_SESSION["rol"])){
 
                 if($_SESSION["rol"] == 2){
-                        $this->user = "autor";
-                        $this->pass = "EVnfB1p";
+                        $this->user = "root";
+                        $this->pass = "";
         
                 }elseif($_SESSION["rol"] == 3){
-                        $this->user = "moderador";
-                        $this->pass = "Y3mlKIK";
+                        $this->user = "root";
+                        $this->pass = "";
 
                 }elseif($_SESSION["rol"] == 4){
-                        $this->user = "administrador";
-                        $this->pass = "G3Mtcq4";
+                        $this->user = "root";
+                        $this->pass = "";
 
                 }else{
-                        $this->user = "invitado";
-                        $this->pass = "FnPkk06";
+                        $this->user = "root";
+                        $this->pass = "";
                 }
 
             }else{
-                $this->user = "invitado";
-                $this->pass = "FnPkk06";
+                $this->user = "root";
+                $this->pass = "";
             }
             
 
 
             try {
                 
-                parent::__construct($this->host.';port=3308; dbname='.$this->nombre_bdd, $this->user, $this->pass, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+                parent::__construct($this->host.';port=3306; dbname='.$this->nombre_bdd, $this->user, $this->pass, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
 
                 parent::setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

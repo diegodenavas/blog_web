@@ -1,0 +1,10 @@
+# Disable directory browsing
+Options All -Indexes
+
+Options +FollowSymLinks
+RewriteEngine on
+
+RewriteRule ^view_post/(.+)$ view_post.php?post=$1
+
+RewriteRule .imagenes/(.+) /programaycompila.com/imagenes/$1
+RewriteRule .imagenes_posts/(.+) /programaycompila.com/imagenes_posts/$1

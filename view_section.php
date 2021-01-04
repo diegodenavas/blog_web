@@ -6,16 +6,16 @@
     <title>Javascript</title>
 
     <!--Cargamos nuestras hojas de estilo-->
-    <link rel="stylesheet" href=".css/plantillaReset.css">
-    <link rel="stylesheet" href=".css/general.css">
-    <link rel="stylesheet" href=".css/estilosPaginasGeneral.css">
-    <link rel="stylesheet" href=".css/estilosSeccionesArticulos.css">
+    <link rel="stylesheet" href="/programaycompila.com/.css/plantillaReset.css">
+    <link rel="stylesheet" href="/programaycompila.com/.css/general.css">
+    <link rel="stylesheet" href="/programaycompila.com/.css/estilosPaginasGeneral.css">
+    <link rel="stylesheet" href="/programaycompila.com/.css/estilosSeccionesArticulos.css">
 
     <!--Cargamos jquery y nuestros scripts-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src=".js/iconos.js"></script>
-    <script src=".js/eliminarDivCookies.js"></script>
-    <script src=".js/menuDesplegable.js"></script>
+    <script src="/programaycompila.com/.js/iconos.js"></script>
+    <script src="/programaycompila.com/.js/eliminarDivCookies.js"></script>
+    <script src="/programaycompila.com/.js/menuDesplegable.js"></script>
     
     <?php
         require(".php/controllers/sectionsController.php");

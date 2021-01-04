@@ -1,9 +1,20 @@
+<?php
+session_start();
+
+require(".php/scripts/elementosComunes/cookieRecordarSesion.php");
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <meta property="og:description" content="Blog personal en el que muestro como aprendo programación de manera autodidacta" />
+    <meta property="og:image" content="/imagenes/programaycompila.jpg" />
+    <meta property="og:site_name" content="programaycompila.es" />
+
+    <link rel="icon" type="image/png" href="/imagenes/favicom-350X350.png">
+    <title>programaYcompila.es</title>
 
     <!--Cargamos las hojas de estilo de esta página-->
     <link rel="stylesheet" href=".css/plantillaReset.css">
@@ -11,6 +22,9 @@
     <link rel="stylesheet" href=".css/estilosPaginasGeneral.css">
     <link rel="stylesheet" href=".css/estilosSeccionesArticulos.css">
     <link rel="stylesheet" href=".css/infoCookies.css">
+
+    <!--Cargamos las fuentes-->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300'  rel='stylesheet' type='text/css'>
 
     <!--Cargamos JQuery y los scripts de ésta página-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -26,10 +40,6 @@
     <?php
         require(".php/controllers/sectionsController.php");
         require_once(".php/models/usuario.php");
-
-        session_start();
-
-        require(".php/scripts/elementosComunes/cookieRecordarSesion.php");
     ?>
 
 </head>
@@ -41,7 +51,7 @@
         require(".php/scripts/elementosComunes/aceptarCookies.php");
     ?>
 
-    <h1 id="tituloPagina" class="tituloPagCompleto">Politica de Cookies</h1>
+    <h1 id="tituloPagina" class="tituloPagCompleto">programadiario > Politica de Cookies</h1>
 
     <section>
         <p>En cumplimiento con lo dispuesto en el artículo 22.2 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de 

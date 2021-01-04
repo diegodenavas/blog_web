@@ -163,10 +163,19 @@ article h2{
 
     #articuloPrincipal{
         width: 95%;
+        box-shadow: none;
+        background-color: rgb(31, 26, 37);
+        color: white;
+        margin-bottom: 0;
+    }
+
+    #articuloPrincipal:hover{
+        background-color: rgb(12, 10, 15);
     }
 
     .articulosSecundarios>img{
         width: 90%;
+        padding: 0;
     }
 
     .articulosSecundarios{
@@ -176,8 +185,24 @@ article h2{
 
     section{
         display: block;
-        width: 82%;
+        width: 100%;
+        padding: 0%;
+        padding-bottom: 5%;
+        margin-left: 0%;
+        margin-right: 0%;
     }
+
+    #cuerpoPost{
+        padding-right: 5%;
+        padding-left: 5%;
+        padding-bottom: 5%;
+    }
+
+    #contenedorPaginacion{
+        margin-right: 5%;
+    }
+
+}
 
 }
 

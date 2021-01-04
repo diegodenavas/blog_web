@@ -47,7 +47,8 @@ require(".php/models/administraContenido.php");
                 if(!isset($_GET['val']) || $_GET['val'] == 0){
                     if($post == 0){
                         echo 
-                        "<a href='view_post.php?post=". $arrayPostsDev[$post]->getTitulo() ."' class='anclaArticulo'>
+                        //"<a href='view_post.php?post=". $arrayPostsDev[$post]->getTitulo() ."' class='anclaArticulo'>
+                        "<a href='view_post/". str_replace(" ", "-", strtolower($arrayPostsDev[$post]->getTitulo())) ."' class='anclaArticulo'>
                             <article id=articuloPrincipal>
                                 <img src='imagenes_posts/".$arrayPostsDev[$post]->getUrlImagen()."' alt=''>
                                 <div>
@@ -61,7 +62,8 @@ require(".php/models/administraContenido.php");
                         
                     }else{ //Si el post no es el primero no le damos para darle el estilo de los demás post
                         echo 
-                        "<a href='view_post.php?post=". $arrayPostsDev[$post]->getTitulo() ."' class='anclaArticulo'>
+                        //"<a href='view_post.php?post=". $arrayPostsDev[$post]->getTitulo() ."' class='anclaArticulo'>
+                        "<a href='view_post/" . str_replace(" ", "-", strtolower($arrayPostsDev[$post]->getTitulo())) ."' class='anclaArticulo'>
                         <article class=articulosSecundarios>
                             <img src='imagenes_posts/".$arrayPostsDev[$post]->getUrlImagen()."' alt=''>
                             <div>
@@ -77,7 +79,9 @@ require(".php/models/administraContenido.php");
                 }
                 else{ //Si el post no es el primero no le damos para darle el estilo de los demás post
                     echo 
-                    "<a href='view_post.php?post=". $arrayPostsDev[$post]->getTitulo() ."' class='anclaArticulo'>
+                    //"<a href='view_post.php?post=". $arrayPostsDev[$post]->getTitulo() ."' class='anclaArticulo'>
+                    "<a href='view_post/". str_replace(" ", "-", strtolower($arrayPostsDev[$post]->getTitulo())) ."' class='anclaArticulo'>
+                    
                     <article class=articulosSecundarios>
                         <img src='imagenes_posts/".$arrayPostsDev[$post]->getUrlImagen()."' alt=''>
                         <div>
